@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\CS.BNP.App.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\App.config" />
+  <event action="Analyze" type="Success" name="frmAddEditEmployeeSecurity.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\EmployeeSecurity\frmAddEditEmployeeSecurity.resx" />
+  <event action="Analyze" type="Success" name="frmChangePassword.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\EmployeeSecurity\frmChangePassword.resx" />
+  <event action="Analyze" type="Success" name="frmEmployee.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\EmployeeSecurity\frmEmployee.resx" />
+  <event action="Analyze" type="Success" name="frmViewApproval.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\EmployeeSecurity\frmViewApproval.resx" />
+  <event action="Analyze" type="Success" name="frmViewHistory.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\EmployeeSecurity\frmViewHistory.resx" />
+  <event action="Analyze" type="Success" name="frmLogin.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\frmLogin.resx" />
+  <event action="Analyze" type="Success" name="frmMainMenu.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\frmMainMenu.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\packages.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="frmBillDetailViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\frmBillDetailViewer.resx" />
+  <event action="Analyze" type="Success" name="frmBillEachDayViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\frmBillEachDayViewer.resx" />
+  <event action="Analyze" type="Success" name="frmLetterCond.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\frmLetterCond.resx" />
+  <event action="Analyze" type="Success" name="frmLetterViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\frmLetterViewer.resx" />
+  <event action="Analyze" type="Success" name="rptBillDetail.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\rptBillDetail.resx" />
+  <event action="Analyze" type="Success" name="rptBillEachDay.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\rptBillEachDay.resx" />
+  <event action="Analyze" type="Success" name="rptLetterFirst.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Letter\rptLetterFirst.resx" />
+  <event action="Analyze" type="Success" name="frmMillPrePaidCond.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Mills\frmMillPrePaidCond.resx" />
+  <event action="Analyze" type="Success" name="frmMillVat.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Mills\frmMillVat.resx" />
+  <event action="Analyze" type="Success" name="frmMillViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Mills\frmMillViewer.resx" />
+  <event action="Analyze" type="Success" name="rptMillVat.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Mills\rptMillVat.resx" />
+  <event action="Analyze" type="Success" name="ReportViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\ReportViewer.resx" />
+  <event action="Analyze" type="Success" name="frmBuyVatCond.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionCreditor\frmBuyVatCond.resx" />
+  <event action="Analyze" type="Success" name="frmCreditorViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionCreditor\frmCreditorViewer.resx" />
+  <event action="Analyze" type="Success" name="frmSummaryPaid.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionCreditor\frmSummaryPaid.resx" />
+  <event action="Analyze" type="Success" name="rptBuyVat.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionCreditor\rptBuyVat.resx" />
+  <event action="Analyze" type="Success" name="rptReportingCreditior.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionCreditor\rptReportingCreditior.resx" />
+  <event action="Analyze" type="Success" name="rptTranCreditor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionCreditor\rptTranCreditor.resx" />
+  <event action="Analyze" type="Success" name="frmDebitorViewer.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionDebitor\frmDebitorViewer.resx" />
+  <event action="Analyze" type="Success" name="frmSummaryCompare.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionDebitor\frmSummaryCompare.resx" />
+  <event action="Analyze" type="Success" name="rptSummaryCompare.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionDebitor\rptSummaryCompare.resx" />
+  <event action="Analyze" type="Success" name="rptTranDebitor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\TransactionDebitor\rptTranDebitor.resx" />
+  <event action="Analyze" type="Success" name="frmBaseVSCond.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\VS\frmBaseVSCond.resx" />
+  <event action="Analyze" type="Success" name="frmVSCond.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\VS\frmVSCond.resx" />
+  <event action="Analyze" type="Success" name="rptVS.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\VS\rptVS.resx" />
+  <event action="Analyze" type="Success" name="rptVSBase.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\VS\rptVSBase.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditCreditor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Creditor\frmAddEditCreditor.resx" />
+  <event action="Analyze" type="Success" name="frmViewCreditor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Creditor\frmViewCreditor.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditDebtor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Debtor\frmAddEditDebtor.resx" />
+  <event action="Analyze" type="Success" name="frmViewDebtor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Debtor\frmViewDebtor.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditJob.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Job\frmAddEditJob.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditJobCreditor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Job\frmAddEditJobCreditor.resx" />
+  <event action="Analyze" type="Success" name="frmViewJob.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Job\frmViewJob.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditProduct.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Products\frmAddEditProduct.resx" />
+  <event action="Analyze" type="Success" name="frmViewProduct.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\Products\frmViewProduct.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditCreditorMill.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\StoneMill\frmAddEditCreditorMill.resx" />
+  <event action="Analyze" type="Success" name="frnViewCreditorMill.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\SystemSetup\StoneMill\frnViewCreditorMill.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditBillingPeriod.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\BillingPeriod\frmAddEditBillingPeriod.resx" />
+  <event action="Analyze" type="Success" name="frmBillngPeriod.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\BillingPeriod\frmBillngPeriod.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditCreditorMill.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Creditor\frmAddEditCreditorMill.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditCreditorPrePaid.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Creditor\frmAddEditCreditorPrePaid.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditCreditorTran.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Creditor\frmAddEditCreditorTran.resx" />
+  <event action="Analyze" type="Success" name="frmViewCreditorPrePaid.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Creditor\frmViewCreditorPrePaid.resx" />
+  <event action="Analyze" type="Success" name="frmViewCreditorTransaction.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Creditor\frmViewCreditorTransaction.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditCreditorMillPrePaid.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\CreditorMill\frmAddEditCreditorMillPrePaid.resx" />
+  <event action="Analyze" type="Success" name="frmViewCreditorMillPrePaid.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\CreditorMill\frmViewCreditorMillPrePaid.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditDebitorCreditor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Debitor\frmAddEditDebitorCreditor.resx" />
+  <event action="Analyze" type="Success" name="frmViewDebitorCreditor.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\Debitor\frmViewDebitorCreditor.resx" />
+  <event action="Analyze" type="Success" name="frmAddEditDebitorPeriod.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\DebitorPeriod\frmAddEditDebitorPeriod.resx" />
+  <event action="Analyze" type="Success" name="frmDebitorPeriod.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Transaction\DebitorPeriod\frmDebitorPeriod.resx" />
+  <event action="Analyze" type="Success" name="CS.BNP.App" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\CS.BNP.App.csproj" />
+  <event action="Analyze" type="Success" name="CS.BNP.App" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App.sln" />
+  <event action="Backup" type="Success" name="CS.BNP.App" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\CS.BNP.App.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\CS.BNP.App.csproj" />
+  <event action="Upgrade" type="Success" name="rptMillVat.resx" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\Reports\Mills\rptMillVat.resx" />
+  <event action="Upgrade" type="Success" name="CS.BNP.App" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App\CS.BNP.App.csproj" />
+  <event action="Upgrade" type="Success" name="CS.BNP.App" path="C:\Users\Thannapan\OneDrive\W@RK\CS.BNP.App\CS.BNP.App\CS.BNP.App.sln" />
+</log>

@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89D12415-C726-491E-A286-910D508C22A7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CS.BNP.App</RootNamespace>
+    <AssemblyName>CS.BNP.App</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Export, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2.Wizard, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.2.Extensions, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmployeeSecurity\frmAddEditEmployeeSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmAddEditEmployeeSecurity.Designer.cs">
+      <DependentUpon>frmAddEditEmployeeSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmViewApproval.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmViewApproval.Designer.cs">
+      <DependentUpon>frmViewApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmViewHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeSecurity\frmViewHistory.Designer.cs">
+      <DependentUpon>frmViewHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CSBNPDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSBNPDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CSBNPDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CSBNPDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSBNPDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\key_DebitorBilling.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\log_History.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_Creditor.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_DebitorBillingPeriod.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_Debtor.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_Job.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_JobCreditor.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_JobDetail.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\mas_Product.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sec_EmployeeUser.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_BillingPeriod.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_Creditor.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_CreditorMillPrePaid.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_CreditorPrePaid.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_CreditorService.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_DebitorRec.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\tran_DebitorRecDetail.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_SumTransactionCreditor.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_TranCreditorMill.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_TransactionCreditor.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_TransactionDebitor_new.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_TransactionMill.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_VersusBuySell.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwrpt_VersusBuySellFromJob.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\vwsupport_CreditorRemSUMNEW.cs">
+      <DependentUpon>CSBNPDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CreditorService.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Letter\frmBillDetailViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\frmBillDetailViewer.Designer.cs">
+      <DependentUpon>frmBillDetailViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Letter\frmBillEachDayViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\frmBillEachDayViewer.Designer.cs">
+      <DependentUpon>frmBillEachDayViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Letter\frmLetterCond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\frmLetterCond.Designer.cs">
+      <DependentUpon>frmLetterCond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Letter\frmLetterViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\frmLetterViewer.Designer.cs">
+      <DependentUpon>frmLetterViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Letter\rptBillDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\rptBillDetail.Designer.cs">
+      <DependentUpon>rptBillDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Letter\rptBillEachDay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\rptBillEachDay.Designer.cs">
+      <DependentUpon>rptBillEachDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Letter\rptLetterFirst.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\rptLetterFirst.Designer.cs">
+      <DependentUpon>rptLetterFirst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillConsolidate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillConsolidate.Designer.cs">
+      <DependentUpon>frmMillConsolidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillPrePaidCond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillPrePaidCond.Designer.cs">
+      <DependentUpon>frmMillPrePaidCond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillVat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillVat.Designer.cs">
+      <DependentUpon>frmMillVat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\frmMillViewer.Designer.cs">
+      <DependentUpon>frmMillViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\rptMillConsolidate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\rptMillConsolidate.Designer.cs">
+      <DependentUpon>rptMillConsolidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\rptMillVat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\rptMillVat.Designer.cs">
+      <DependentUpon>rptMillVat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Mills\rptMilTran.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Mills\rptMilTran.Designer.cs">
+      <DependentUpon>rptMilTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\frmBuyVatCond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\frmBuyVatCond.Designer.cs">
+      <DependentUpon>frmBuyVatCond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\frmCreditorViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\frmCreditorViewer.Designer.cs">
+      <DependentUpon>frmCreditorViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\frmSummaryPaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\frmSummaryPaid.Designer.cs">
+      <DependentUpon>frmSummaryPaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\rptBuyVat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\rptBuyVat.Designer.cs">
+      <DependentUpon>rptBuyVat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\rptReportingCreditior.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\rptReportingCreditior.Designer.cs">
+      <DependentUpon>rptReportingCreditior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\rptTranCreditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionCreditor\rptTranCreditor.Designer.cs">
+      <DependentUpon>rptTranCreditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\frmDebitorViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\frmDebitorViewer.Designer.cs">
+      <DependentUpon>frmDebitorViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\frmSummaryCompare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\frmSummaryCompare.Designer.cs">
+      <DependentUpon>frmSummaryCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\rptSummaryCompare.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\rptSummaryCompare.Designer.cs">
+      <DependentUpon>rptSummaryCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\rptTranDebitor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionDebitor\rptTranDebitor.Designer.cs">
+      <DependentUpon>rptTranDebitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VS\frmBaseVSCond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\VS\frmBaseVSCond.Designer.cs">
+      <DependentUpon>frmBaseVSCond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VS\frmVSCond.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\VS\frmVSCond.Designer.cs">
+      <DependentUpon>frmVSCond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VS\rptVS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VS\rptVS.Designer.cs">
+      <DependentUpon>rptVS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\VS\rptVSBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VS\rptVSBase.Designer.cs">
+      <DependentUpon>rptVSBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GlobalService.cs" />
+    <Compile Include="Services\Variable.cs" />
+    <Compile Include="SystemSetup\Creditor\frmAddEditCreditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Creditor\frmAddEditCreditor.Designer.cs">
+      <DependentUpon>frmAddEditCreditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Creditor\frmViewCreditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Creditor\frmViewCreditor.Designer.cs">
+      <DependentUpon>frmViewCreditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Debtor\frmAddEditDebtor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Debtor\frmAddEditDebtor.Designer.cs">
+      <DependentUpon>frmAddEditDebtor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Debtor\frmViewDebtor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Debtor\frmViewDebtor.Designer.cs">
+      <DependentUpon>frmViewDebtor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Job\frmAddEditJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Job\frmAddEditJob.Designer.cs">
+      <DependentUpon>frmAddEditJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Job\frmAddEditJobCreditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Job\frmAddEditJobCreditor.Designer.cs">
+      <DependentUpon>frmAddEditJobCreditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Job\frmViewJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Job\frmViewJob.Designer.cs">
+      <DependentUpon>frmViewJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Products\frmAddEditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Products\frmAddEditProduct.Designer.cs">
+      <DependentUpon>frmAddEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup\Products\frmViewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup\Products\frmViewProduct.Designer.cs">
+      <DependentUpon>frmViewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\BillingPeriod\frmAddEditBillingPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\BillingPeriod\frmAddEditBillingPeriod.Designer.cs">
+      <DependentUpon>frmAddEditBillingPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\BillingPeriod\frmBillngPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\BillingPeriod\frmBillngPeriod.Designer.cs">
+      <DependentUpon>frmBillngPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\CreditorMill\frmAddEditCreditorMillPrePaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\CreditorMill\frmAddEditCreditorMillPrePaid.Designer.cs">
+      <DependentUpon>frmAddEditCreditorMillPrePaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmAddEditCreditorMill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmAddEditCreditorMill.Designer.cs">
+      <DependentUpon>frmAddEditCreditorMill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmAddEditCreditorPrePaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmAddEditCreditorPrePaid.Designer.cs">
+      <DependentUpon>frmAddEditCreditorPrePaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmAddEditCreditorTran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmAddEditCreditorTran.Designer.cs">
+      <DependentUpon>frmAddEditCreditorTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\CreditorMill\frmViewCreditorMillPrePaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\CreditorMill\frmViewCreditorMillPrePaid.Designer.cs">
+      <DependentUpon>frmViewCreditorMillPrePaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmViewCreditorPrePaid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmViewCreditorPrePaid.Designer.cs">
+      <DependentUpon>frmViewCreditorPrePaid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmViewCreditorTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Creditor\frmViewCreditorTransaction.Designer.cs">
+      <DependentUpon>frmViewCreditorTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\DebitorPeriod\frmAddEditDebitorPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\DebitorPeriod\frmAddEditDebitorPeriod.Designer.cs">
+      <DependentUpon>frmAddEditDebitorPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\DebitorPeriod\frmDebitorPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\DebitorPeriod\frmDebitorPeriod.Designer.cs">
+      <DependentUpon>frmDebitorPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Debitor\frmAddEditDebitorCreditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Debitor\frmAddEditDebitorCreditor.Designer.cs">
+      <DependentUpon>frmAddEditDebitorCreditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\Debitor\frmViewDebitorCreditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\Debitor\frmViewDebitorCreditor.Designer.cs">
+      <DependentUpon>frmViewDebitorCreditor.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EmployeeSecurity\frmAddEditEmployeeSecurity.resx">
+      <DependentUpon>frmAddEditEmployeeSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSecurity\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSecurity\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSecurity\frmViewApproval.resx">
+      <DependentUpon>frmViewApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSecurity\frmViewHistory.resx">
+      <DependentUpon>frmViewHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\Letter\frmBillDetailViewer.resx">
+      <DependentUpon>frmBillDetailViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\frmBillEachDayViewer.resx">
+      <DependentUpon>frmBillEachDayViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\frmLetterCond.resx">
+      <DependentUpon>frmLetterCond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\frmLetterViewer.resx">
+      <DependentUpon>frmLetterViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\rptBillDetail.resx">
+      <DependentUpon>rptBillDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\rptBillEachDay.resx">
+      <DependentUpon>rptBillEachDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\rptLetterFirst.resx">
+      <DependentUpon>rptLetterFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\frmMillConsolidate.resx">
+      <DependentUpon>frmMillConsolidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\frmMillPrePaidCond.resx">
+      <DependentUpon>frmMillPrePaidCond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\frmMillVat.resx">
+      <DependentUpon>frmMillVat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\frmMillViewer.resx">
+      <DependentUpon>frmMillViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\rptMillConsolidate.resx">
+      <DependentUpon>rptMillConsolidate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\rptMillVat.resx">
+      <DependentUpon>rptMillVat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Mills\rptMilTran.resx">
+      <DependentUpon>rptMilTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionCreditor\frmBuyVatCond.resx">
+      <DependentUpon>frmBuyVatCond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionCreditor\frmCreditorViewer.resx">
+      <DependentUpon>frmCreditorViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionCreditor\frmSummaryPaid.resx">
+      <DependentUpon>frmSummaryPaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionCreditor\rptBuyVat.resx">
+      <DependentUpon>rptBuyVat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionCreditor\rptReportingCreditior.resx">
+      <DependentUpon>rptReportingCreditior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionCreditor\rptTranCreditor.resx">
+      <DependentUpon>rptTranCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionDebitor\frmDebitorViewer.resx">
+      <DependentUpon>frmDebitorViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionDebitor\frmSummaryCompare.resx">
+      <DependentUpon>frmSummaryCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionDebitor\rptSummaryCompare.resx">
+      <DependentUpon>rptSummaryCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionDebitor\rptTranDebitor.resx">
+      <DependentUpon>rptTranDebitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VS\frmBaseVSCond.resx">
+      <DependentUpon>frmBaseVSCond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VS\frmVSCond.resx">
+      <DependentUpon>frmVSCond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VS\rptVS.resx">
+      <DependentUpon>rptVS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VS\rptVSBase.resx">
+      <DependentUpon>rptVSBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Creditor\frmAddEditCreditor.resx">
+      <DependentUpon>frmAddEditCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Creditor\frmViewCreditor.resx">
+      <DependentUpon>frmViewCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Debtor\frmAddEditDebtor.resx">
+      <DependentUpon>frmAddEditDebtor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Debtor\frmViewDebtor.resx">
+      <DependentUpon>frmViewDebtor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Job\frmAddEditJob.resx">
+      <DependentUpon>frmAddEditJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Job\frmAddEditJobCreditor.resx">
+      <DependentUpon>frmAddEditJobCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Job\frmViewJob.resx">
+      <DependentUpon>frmViewJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Products\frmAddEditProduct.resx">
+      <DependentUpon>frmAddEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSetup\Products\frmViewProduct.resx">
+      <DependentUpon>frmViewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\BillingPeriod\frmAddEditBillingPeriod.resx">
+      <DependentUpon>frmAddEditBillingPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\BillingPeriod\frmBillngPeriod.resx">
+      <DependentUpon>frmBillngPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\CreditorMill\frmAddEditCreditorMillPrePaid.resx">
+      <DependentUpon>frmAddEditCreditorMillPrePaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Creditor\frmAddEditCreditorMill.resx">
+      <DependentUpon>frmAddEditCreditorMill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Creditor\frmAddEditCreditorPrePaid.resx">
+      <DependentUpon>frmAddEditCreditorPrePaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Creditor\frmAddEditCreditorTran.resx">
+      <DependentUpon>frmAddEditCreditorTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\CreditorMill\frmViewCreditorMillPrePaid.resx">
+      <DependentUpon>frmViewCreditorMillPrePaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Creditor\frmViewCreditorPrePaid.resx">
+      <DependentUpon>frmViewCreditorPrePaid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Creditor\frmViewCreditorTransaction.resx">
+      <DependentUpon>frmViewCreditorTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\DebitorPeriod\frmAddEditDebitorPeriod.resx">
+      <DependentUpon>frmAddEditDebitorPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\DebitorPeriod\frmDebitorPeriod.resx">
+      <DependentUpon>frmDebitorPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Debitor\frmAddEditDebitorCreditor.resx">
+      <DependentUpon>frmAddEditDebitorCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\Debitor\frmViewDebitorCreditor.resx">
+      <DependentUpon>frmViewDebitorCreditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Entity\CSBNPDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CSBNPDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\CSBNPDB.edmx.diagram">
+      <DependentUpon>CSBNPDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contructio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EDIT_112020.txt" />
+    <Content Include="Entity\CSBNPDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CSBNPDB.Context.cs</LastGenOutput>
+      <DependentUpon>CSBNPDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\CSBNPDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CSBNPDB.edmx</DependentUpon>
+      <LastGenOutput>CSBNPDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

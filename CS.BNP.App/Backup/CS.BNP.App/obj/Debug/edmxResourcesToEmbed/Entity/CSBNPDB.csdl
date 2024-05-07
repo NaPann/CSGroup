@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CS.BNP.DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CSBNPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="key_DebitorBilling" EntityType="CS.BNP.DBModel.key_DebitorBilling" />
+    <EntitySet Name="mas_DebitorBillingPeriod" EntityType="CS.BNP.DBModel.mas_DebitorBillingPeriod" />
+    <EntitySet Name="mas_Product" EntityType="CS.BNP.DBModel.mas_Product" />
+    <EntitySet Name="sec_EmployeeUser" EntityType="CS.BNP.DBModel.sec_EmployeeUser" />
+    <EntitySet Name="tran_BillingPeriod" EntityType="CS.BNP.DBModel.tran_BillingPeriod" />
+    <EntitySet Name="tran_DebitorRec" EntityType="CS.BNP.DBModel.tran_DebitorRec" />
+    <EntitySet Name="tran_DebitorRecDetail" EntityType="CS.BNP.DBModel.tran_DebitorRecDetail" />
+    <EntitySet Name="vwrpt_SumTransactionCreditor" EntityType="CS.BNP.DBModel.vwrpt_SumTransactionCreditor" />
+    <EntitySet Name="vwrpt_TransactionCreditor" EntityType="CS.BNP.DBModel.vwrpt_TransactionCreditor" />
+    <EntitySet Name="vwrpt_TransactionDebitor_new" EntityType="CS.BNP.DBModel.vwrpt_TransactionDebitor_new" />
+    <AssociationSet Name="FK_key_DebitorBilling_mas_DebitorBillingPeriod" Association="CS.BNP.DBModel.FK_key_DebitorBilling_mas_DebitorBillingPeriod">
+      <End Role="mas_DebitorBillingPeriod" EntitySet="mas_DebitorBillingPeriod" />
+      <End Role="key_DebitorBilling" EntitySet="key_DebitorBilling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_key_DebitorBilling_tran_BillingPeriod" Association="CS.BNP.DBModel.FK_key_DebitorBilling_tran_BillingPeriod">
+      <End Role="tran_BillingPeriod" EntitySet="tran_BillingPeriod" />
+      <End Role="key_DebitorBilling" EntitySet="key_DebitorBilling" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_DebitorRec_mas_DebitorBillingPeriod" Association="CS.BNP.DBModel.FK_tran_DebitorRec_mas_DebitorBillingPeriod">
+      <End Role="mas_DebitorBillingPeriod" EntitySet="mas_DebitorBillingPeriod" />
+      <End Role="tran_DebitorRec" EntitySet="tran_DebitorRec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_DebitorRecDetail_tran_DebitorRec" Association="CS.BNP.DBModel.FK_tran_DebitorRecDetail_tran_DebitorRec">
+      <End Role="tran_DebitorRec" EntitySet="tran_DebitorRec" />
+      <End Role="tran_DebitorRecDetail" EntitySet="tran_DebitorRecDetail" />
+    </AssociationSet>
+    <EntitySet Name="tran_Creditor" EntityType="CS.BNP.DBModel.tran_Creditor" />
+    <AssociationSet Name="FK_tran_Creditor_mas_Product" Association="CS.BNP.DBModel.FK_tran_Creditor_mas_Product">
+      <End Role="mas_Product" EntitySet="mas_Product" />
+      <End Role="tran_Creditor" EntitySet="tran_Creditor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_Creditor_tran_BillingPeriod" Association="CS.BNP.DBModel.FK_tran_Creditor_tran_BillingPeriod">
+      <End Role="tran_BillingPeriod" EntitySet="tran_BillingPeriod" />
+      <End Role="tran_Creditor" EntitySet="tran_Creditor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_DebitorRecDetail_tran_Creditor" Association="CS.BNP.DBModel.FK_tran_DebitorRecDetail_tran_Creditor">
+      <End Role="tran_Creditor" EntitySet="tran_Creditor" />
+      <End Role="tran_DebitorRecDetail" EntitySet="tran_DebitorRecDetail" />
+    </AssociationSet>
+    <EntitySet Name="vwrpt_VersusBuySell" EntityType="CS.BNP.DBModel.vwrpt_VersusBuySell" />
+    <EntitySet Name="log_History" EntityType="CS.BNP.DBModel.log_History" />
+    <EntitySet Name="mas_Job" EntityType="CS.BNP.DBModel.mas_Job" />
+    <EntitySet Name="mas_JobCreditor" EntityType="CS.BNP.DBModel.mas_JobCreditor" />
+    <EntitySet Name="mas_JobDetail" EntityType="CS.BNP.DBModel.mas_JobDetail" />
+    <AssociationSet Name="FK_mas_JobCreditor_mas_Job" Association="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Job">
+      <End Role="mas_Job" EntitySet="mas_Job" />
+      <End Role="mas_JobCreditor" EntitySet="mas_JobCreditor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mas_JobDetail_mas_Job" Association="CS.BNP.DBModel.FK_mas_JobDetail_mas_Job">
+      <End Role="mas_Job" EntitySet="mas_Job" />
+      <End Role="mas_JobDetail" EntitySet="mas_JobDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_Creditor_mas_Job" Association="CS.BNP.DBModel.FK_tran_Creditor_mas_Job">
+      <End Role="mas_Job" EntitySet="mas_Job" />
+      <End Role="tran_Creditor" EntitySet="tran_Creditor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mas_JobCreditor_mas_Product" Association="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Product">
+      <End Role="mas_Product" EntitySet="mas_Product" />
+      <End Role="mas_JobCreditor" EntitySet="mas_JobCreditor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mas_JobDetail_mas_Product" Association="CS.BNP.DBModel.FK_mas_JobDetail_mas_Product">
+      <End Role="mas_Product" EntitySet="mas_Product" />
+      <End Role="mas_JobDetail" EntitySet="mas_JobDetail" />
+    </AssociationSet>
+    <EntitySet Name="mas_Debtor" EntityType="CS.BNP.DBModel.mas_Debtor" />
+    <AssociationSet Name="FK_mas_Job_mas_Debtor" Association="CS.BNP.DBModel.FK_mas_Job_mas_Debtor">
+      <End Role="mas_Debtor" EntitySet="mas_Debtor" />
+      <End Role="mas_Job" EntitySet="mas_Job" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_DebitorRec_mas_Debtor" Association="CS.BNP.DBModel.FK_tran_DebitorRec_mas_Debtor">
+      <End Role="mas_Debtor" EntitySet="mas_Debtor" />
+      <End Role="tran_DebitorRec" EntitySet="tran_DebitorRec" />
+    </AssociationSet>
+    <EntitySet Name="vwrpt_VersusBuySellFromJob" EntityType="CS.BNP.DBModel.vwrpt_VersusBuySellFromJob" />
+    <EntitySet Name="mas_Creditor" EntityType="CS.BNP.DBModel.mas_Creditor" />
+    <EntitySet Name="mas_CreditorMill" EntityType="CS.BNP.DBModel.mas_CreditorMill" />
+    <AssociationSet Name="FK_mas_JobCreditor_mas_Creditor" Association="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Creditor">
+      <End Role="mas_Creditor" EntitySet="mas_Creditor" />
+      <End Role="mas_JobCreditor" EntitySet="mas_JobCreditor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_Creditor_mas_Creditor" Association="CS.BNP.DBModel.FK_tran_Creditor_mas_Creditor">
+      <End Role="mas_Creditor" EntitySet="mas_Creditor" />
+      <End Role="tran_Creditor" EntitySet="tran_Creditor" />
+    </AssociationSet>
+    <EntitySet Name="tran_CreditorMill" EntityType="CS.BNP.DBModel.tran_CreditorMill" />
+    <AssociationSet Name="FK_tran_CreditorMill_mas_CreditorMill" Association="CS.BNP.DBModel.FK_tran_CreditorMill_mas_CreditorMill">
+      <End Role="mas_CreditorMill" EntitySet="mas_CreditorMill" />
+      <End Role="tran_CreditorMill" EntitySet="tran_CreditorMill" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_CreditorMill_tran_Creditor" Association="CS.BNP.DBModel.FK_tran_CreditorMill_tran_Creditor">
+      <End Role="tran_Creditor" EntitySet="tran_Creditor" />
+      <End Role="tran_CreditorMill" EntitySet="tran_CreditorMill" />
+    </AssociationSet>
+    <EntitySet Name="tran_CreditorPrePaid" EntityType="CS.BNP.DBModel.tran_CreditorPrePaid" />
+    <AssociationSet Name="FK_tran_CreditorPrePaid_mas_Creditor" Association="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Creditor">
+      <End Role="mas_Creditor" EntitySet="mas_Creditor" />
+      <End Role="tran_CreditorPrePaid" EntitySet="tran_CreditorPrePaid" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_CreditorPrePaid_mas_Job" Association="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Job">
+      <End Role="mas_Job" EntitySet="mas_Job" />
+      <End Role="tran_CreditorPrePaid" EntitySet="tran_CreditorPrePaid" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_CreditorPrePaid_tran_BillingPeriod" Association="CS.BNP.DBModel.FK_tran_CreditorPrePaid_tran_BillingPeriod">
+      <End Role="tran_BillingPeriod" EntitySet="tran_BillingPeriod" />
+      <End Role="tran_CreditorPrePaid" EntitySet="tran_CreditorPrePaid" />
+    </AssociationSet>
+    <EntitySet Name="tran_CreditorMillPrePaid" EntityType="CS.BNP.DBModel.tran_CreditorMillPrePaid" />
+    <AssociationSet Name="FK_tran_CreditorMillPrePaid_mas_CreditorMill" Association="CS.BNP.DBModel.FK_tran_CreditorMillPrePaid_mas_CreditorMill">
+      <End Role="mas_CreditorMill" EntitySet="mas_CreditorMill" />
+      <End Role="tran_CreditorMillPrePaid" EntitySet="tran_CreditorMillPrePaid" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tran_CreditorMill_mas_Job" Association="CS.BNP.DBModel.FK_tran_CreditorMill_mas_Job">
+      <End Role="mas_Job" EntitySet="mas_Job" />
+      <End Role="tran_CreditorMillPrePaid" EntitySet="tran_CreditorMillPrePaid" />
+    </AssociationSet>
+    <EntitySet Name="vwrpt_TranCreditorMill" EntityType="CS.BNP.DBModel.vwrpt_TranCreditorMill" />
+  </EntityContainer>
+  <EntityType Name="key_DebitorBilling">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DebitorPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="mas_DebitorBillingPeriod" Relationship="CS.BNP.DBModel.FK_key_DebitorBilling_mas_DebitorBillingPeriod" FromRole="key_DebitorBilling" ToRole="mas_DebitorBillingPeriod" />
+    <NavigationProperty Name="tran_BillingPeriod" Relationship="CS.BNP.DBModel.FK_key_DebitorBilling_tran_BillingPeriod" FromRole="key_DebitorBilling" ToRole="tran_BillingPeriod" />
+  </EntityType>
+  <EntityType Name="mas_DebitorBillingPeriod">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DebitorPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebitorDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DebitorDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DebitorBillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="key_DebitorBilling" Relationship="CS.BNP.DBModel.FK_key_DebitorBilling_mas_DebitorBillingPeriod" FromRole="mas_DebitorBillingPeriod" ToRole="key_DebitorBilling" />
+    <NavigationProperty Name="tran_DebitorRec" Relationship="CS.BNP.DBModel.FK_tran_DebitorRec_mas_DebitorBillingPeriod" FromRole="mas_DebitorBillingPeriod" ToRole="tran_DebitorRec" />
+  </EntityType>
+  <EntityType Name="mas_Product">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ProductUnit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tran_Creditor" Relationship="CS.BNP.DBModel.FK_tran_Creditor_mas_Product" FromRole="mas_Product" ToRole="tran_Creditor" />
+    <NavigationProperty Name="mas_JobCreditor" Relationship="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Product" FromRole="mas_Product" ToRole="mas_JobCreditor" />
+    <NavigationProperty Name="mas_JobDetail" Relationship="CS.BNP.DBModel.FK_mas_JobDetail_mas_Product" FromRole="mas_Product" ToRole="mas_JobDetail" />
+  </EntityType>
+  <EntityType Name="sec_EmployeeUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeFirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeLastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsSecurity" Type="Boolean" Nullable="false" />
+    <Property Name="IsSystemSetup" Type="Boolean" Nullable="false" />
+    <Property Name="IsTransaction" Type="Boolean" Nullable="false" />
+    <Property Name="IsReport" Type="Boolean" Nullable="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NeedToApprove" Type="Boolean" Nullable="false" />
+    <Property Name="NeedToApproveBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tran_BillingPeriod">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillingPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="key_DebitorBilling" Relationship="CS.BNP.DBModel.FK_key_DebitorBilling_tran_BillingPeriod" FromRole="tran_BillingPeriod" ToRole="key_DebitorBilling" />
+    <NavigationProperty Name="tran_Creditor" Relationship="CS.BNP.DBModel.FK_tran_Creditor_tran_BillingPeriod" FromRole="tran_BillingPeriod" ToRole="tran_Creditor" />
+    <NavigationProperty Name="tran_CreditorPrePaid" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_tran_BillingPeriod" FromRole="tran_BillingPeriod" ToRole="tran_CreditorPrePaid" />
+  </EntityType>
+  <EntityType Name="tran_DebitorRec">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransactionDebitorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebitorPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="DebitorID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CheckedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CheckedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsReceived" Type="Boolean" Nullable="false" />
+    <Property Name="ReceivedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsCancel" Type="Boolean" Nullable="false" />
+    <Property Name="CancelBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CancelDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="TranVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmountByBill" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_DebitorBillingPeriod" Relationship="CS.BNP.DBModel.FK_tran_DebitorRec_mas_DebitorBillingPeriod" FromRole="tran_DebitorRec" ToRole="mas_DebitorBillingPeriod" />
+    <NavigationProperty Name="tran_DebitorRecDetail" Relationship="CS.BNP.DBModel.FK_tran_DebitorRecDetail_tran_DebitorRec" FromRole="tran_DebitorRec" ToRole="tran_DebitorRecDetail" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="mas_Debtor" Relationship="CS.BNP.DBModel.FK_tran_DebitorRec_mas_Debtor" FromRole="tran_DebitorRec" ToRole="mas_Debtor" />
+  </EntityType>
+  <EntityType Name="tran_DebitorRecDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MasterID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionCreditorID" Type="Int32" Nullable="false" />
+    <Property Name="TranSellPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="tran_DebitorRec" Relationship="CS.BNP.DBModel.FK_tran_DebitorRecDetail_tran_DebitorRec" FromRole="tran_DebitorRecDetail" ToRole="tran_DebitorRec" />
+    <NavigationProperty Name="tran_Creditor" Relationship="CS.BNP.DBModel.FK_tran_DebitorRecDetail_tran_Creditor" FromRole="tran_DebitorRecDetail" ToRole="tran_Creditor" />
+    <Property Name="DocNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwrpt_SumTransactionCreditor">
+    <Key>
+      <PropertyRef Name="Inx" />
+    </Key>
+    <Property Name="Inx" Type="Int64" Nullable="false" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="BillingPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobDateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorID" Type="Int32" Nullable="false" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductUnit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranWeight" Type="Decimal" Precision="38" Scale="3" />
+    <Property Name="TranBuyPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TranDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TranVat" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeDiscount" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalBeforeVat" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="38" Scale="2" />
+    <Property Name="TranUnitQuantity" Type="Int32" />
+    <Property Name="PrepaidTotalAmount" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwrpt_TransactionCreditor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionCreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="BillingPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionSeq" Type="Int32" Nullable="false" />
+    <Property Name="DocumentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsOutsidePeriod" Type="Boolean" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobDateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorID" Type="Int32" Nullable="false" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductUnit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CarLicense" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranWeight" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="TranBuyPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="TranVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="PaidBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="IsCancel" Type="Boolean" Nullable="false" />
+    <Property Name="CancelBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CancelDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BillingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TranUnitQuantity" Type="Int32" Nullable="false" />
+    <Property Name="PrepaidTotalAmount" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+    <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vwrpt_TransactionDebitor_new">
+    <Key>
+      <PropertyRef Name="Inx" />
+    </Key>
+    <Property Name="Inx" Type="Int64" Nullable="false" />
+    <Property Name="MasterID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDebitorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebitorPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="DebitorPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebitorDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DebitorDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DebitorBillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="DetailID" Type="Int32" Nullable="false" />
+    <Property Name="DebitorID" Type="Int32" Nullable="false" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CheckedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CheckedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsReceived" Type="Boolean" Nullable="false" />
+    <Property Name="ReceivedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsCancel" Type="Boolean" Nullable="false" />
+    <Property Name="CancelBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CancelDate" Type="DateTime" Precision="3" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="TranVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmountByBill" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TransactionCreditorID" Type="Int32" Nullable="false" />
+    <Property Name="TranSellPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmontDetail" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TransactionCreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="BillingPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="BillingDateCr" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionDateCr" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionSeqCr" Type="Int32" Nullable="false" />
+    <Property Name="DocumentNoCr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranUnitQuantityCr" Type="Int32" Nullable="false" />
+    <Property Name="IsOutsidePeriodCr" Type="Boolean" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobDateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DebtorID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ProductUnit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CarLicense" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranWeight" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="TranBuyPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranDiscountCr" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsVatCr" Type="Boolean" Nullable="false" />
+    <Property Name="TranVatCr" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeDiscountCr" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeVatCr" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmountCr" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="PaidBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+    <Property Name="DocNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_key_DebitorBilling_mas_DebitorBillingPeriod">
+    <End Type="CS.BNP.DBModel.mas_DebitorBillingPeriod" Role="mas_DebitorBillingPeriod" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.key_DebitorBilling" Role="key_DebitorBilling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_DebitorBillingPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="key_DebitorBilling">
+        <PropertyRef Name="DebitorPeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_key_DebitorBilling_tran_BillingPeriod">
+    <End Type="CS.BNP.DBModel.tran_BillingPeriod" Role="tran_BillingPeriod" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.key_DebitorBilling" Role="key_DebitorBilling" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tran_BillingPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="key_DebitorBilling">
+        <PropertyRef Name="BillingPeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_DebitorRec_mas_DebitorBillingPeriod">
+    <End Type="CS.BNP.DBModel.mas_DebitorBillingPeriod" Role="mas_DebitorBillingPeriod" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_DebitorRec" Role="tran_DebitorRec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_DebitorBillingPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_DebitorRec">
+        <PropertyRef Name="DebitorPeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_DebitorRecDetail_tran_DebitorRec">
+    <End Type="CS.BNP.DBModel.tran_DebitorRec" Role="tran_DebitorRec" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_DebitorRecDetail" Role="tran_DebitorRecDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tran_DebitorRec">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_DebitorRecDetail">
+        <PropertyRef Name="MasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tran_Creditor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TransactionCreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="BillingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionSeq" Type="Int32" Nullable="false" />
+    <Property Name="DocumentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranUnitQuantity" Type="Int32" Nullable="false" />
+    <Property Name="IsOutsidePeriod" Type="Boolean" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="CarLicense" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranWeight" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="TranBuyPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="TranVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="PaidBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="IsCancel" Type="Boolean" Nullable="false" />
+    <Property Name="CancelBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CancelDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsUsed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="mas_Product" Relationship="CS.BNP.DBModel.FK_tran_Creditor_mas_Product" FromRole="tran_Creditor" ToRole="mas_Product" />
+    <NavigationProperty Name="tran_BillingPeriod" Relationship="CS.BNP.DBModel.FK_tran_Creditor_tran_BillingPeriod" FromRole="tran_Creditor" ToRole="tran_BillingPeriod" />
+    <NavigationProperty Name="tran_DebitorRecDetail" Relationship="CS.BNP.DBModel.FK_tran_DebitorRecDetail_tran_Creditor" FromRole="tran_Creditor" ToRole="tran_DebitorRecDetail" />
+    <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_tran_Creditor_mas_Job" FromRole="tran_Creditor" ToRole="mas_Job" />
+    <NavigationProperty Name="mas_Creditor" Relationship="CS.BNP.DBModel.FK_tran_Creditor_mas_Creditor" FromRole="tran_Creditor" ToRole="mas_Creditor" />
+    <NavigationProperty Name="tran_CreditorMill" Relationship="CS.BNP.DBModel.FK_tran_CreditorMill_tran_Creditor" FromRole="tran_Creditor" ToRole="tran_CreditorMill" />
+  </EntityType>
+  <Association Name="FK_tran_Creditor_mas_Product">
+    <End Type="CS.BNP.DBModel.mas_Product" Role="mas_Product" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_Creditor" Role="tran_Creditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_Creditor">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_Creditor_tran_BillingPeriod">
+    <End Type="CS.BNP.DBModel.tran_BillingPeriod" Role="tran_BillingPeriod" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_Creditor" Role="tran_Creditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tran_BillingPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_Creditor">
+        <PropertyRef Name="BillingPeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_DebitorRecDetail_tran_Creditor">
+    <End Type="CS.BNP.DBModel.tran_Creditor" Role="tran_Creditor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_DebitorRecDetail" Role="tran_DebitorRecDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tran_Creditor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_DebitorRecDetail">
+        <PropertyRef Name="TransactionCreditorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwrpt_VersusBuySell">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TranBuyPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="TranSellPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DocumentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SellDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="log_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="logDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="logUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="logDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="mas_Job">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobDateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorID" Type="Int32" Nullable="false" />
+    <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsApprove" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="mas_JobCreditor" Relationship="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Job" FromRole="mas_Job" ToRole="mas_JobCreditor" />
+    <NavigationProperty Name="mas_JobDetail" Relationship="CS.BNP.DBModel.FK_mas_JobDetail_mas_Job" FromRole="mas_Job" ToRole="mas_JobDetail" />
+    <NavigationProperty Name="tran_Creditor" Relationship="CS.BNP.DBModel.FK_tran_Creditor_mas_Job" FromRole="mas_Job" ToRole="tran_Creditor" />
+    <NavigationProperty Name="mas_Debtor" Relationship="CS.BNP.DBModel.FK_mas_Job_mas_Debtor" FromRole="mas_Job" ToRole="mas_Debtor" />
+    <NavigationProperty Name="tran_CreditorPrePaid" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Job" FromRole="mas_Job" ToRole="tran_CreditorPrePaid" />
+    <NavigationProperty Name="tran_CreditorMillPrePaid" Relationship="CS.BNP.DBModel.FK_tran_CreditorMill_mas_Job" FromRole="mas_Job" ToRole="tran_CreditorMillPrePaid" />
+  </EntityType>
+  <EntityType Name="mas_JobCreditor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductSellPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Job" FromRole="mas_JobCreditor" ToRole="mas_Job" />
+    <NavigationProperty Name="mas_Product" Relationship="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Product" FromRole="mas_JobCreditor" ToRole="mas_Product" />
+    <Property Name="SourceFrom" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="mas_Creditor" Relationship="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Creditor" FromRole="mas_JobCreditor" ToRole="mas_Creditor" />
+  </EntityType>
+  <EntityType Name="mas_JobDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductPriceExactly" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="JobQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_mas_JobDetail_mas_Job" FromRole="mas_JobDetail" ToRole="mas_Job" />
+    <NavigationProperty Name="mas_Product" Relationship="CS.BNP.DBModel.FK_mas_JobDetail_mas_Product" FromRole="mas_JobDetail" ToRole="mas_Product" />
+  </EntityType>
+  <Association Name="FK_mas_JobCreditor_mas_Job">
+    <End Type="CS.BNP.DBModel.mas_Job" Role="mas_Job" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.mas_JobCreditor" Role="mas_JobCreditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mas_JobCreditor">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mas_JobDetail_mas_Job">
+    <End Type="CS.BNP.DBModel.mas_Job" Role="mas_Job" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.mas_JobDetail" Role="mas_JobDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mas_JobDetail">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_Creditor_mas_Job">
+    <End Type="CS.BNP.DBModel.mas_Job" Role="mas_Job" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_Creditor" Role="tran_Creditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_Creditor">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mas_JobCreditor_mas_Product">
+    <End Type="CS.BNP.DBModel.mas_Product" Role="mas_Product" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.mas_JobCreditor" Role="mas_JobCreditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mas_JobCreditor">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mas_JobDetail_mas_Product">
+    <End Type="CS.BNP.DBModel.mas_Product" Role="mas_Product" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.mas_JobDetail" Role="mas_JobDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Product">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mas_JobDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="mas_Debtor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_mas_Job_mas_Debtor" FromRole="mas_Debtor" ToRole="mas_Job" />
+    <NavigationProperty Name="tran_DebitorRec" Relationship="CS.BNP.DBModel.FK_tran_DebitorRec_mas_Debtor" FromRole="mas_Debtor" ToRole="tran_DebitorRec" />
+  </EntityType>
+  <Association Name="FK_mas_Job_mas_Debtor">
+    <End Type="CS.BNP.DBModel.mas_Debtor" Role="mas_Debtor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.mas_Job" Role="mas_Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Debtor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mas_Job">
+        <PropertyRef Name="DebtorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_DebitorRec_mas_Debtor">
+    <End Type="CS.BNP.DBModel.mas_Debtor" Role="mas_Debtor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_DebitorRec" Role="tran_DebitorRec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Debtor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_DebitorRec">
+        <PropertyRef Name="DebitorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwrpt_VersusBuySellFromJob">
+    <Key>
+      <PropertyRef Name="Inx" />
+    </Key>
+    <Property Name="Inx" Type="Int64" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobDateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorID" Type="Int32" Nullable="false" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsApprove" Type="Boolean" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SellPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="JobQuantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="BuyPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="ProductUnit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionDateStr" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mas_Creditor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_JobCreditor" Relationship="CS.BNP.DBModel.FK_mas_JobCreditor_mas_Creditor" FromRole="mas_Creditor" ToRole="mas_JobCreditor" />
+    <NavigationProperty Name="tran_Creditor" Relationship="CS.BNP.DBModel.FK_tran_Creditor_mas_Creditor" FromRole="mas_Creditor" ToRole="tran_Creditor" />
+    <NavigationProperty Name="tran_CreditorPrePaid" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Creditor" FromRole="mas_Creditor" ToRole="tran_CreditorPrePaid" />
+  </EntityType>
+  <EntityType Name="mas_CreditorMill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditorMillCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tran_CreditorMill" Relationship="CS.BNP.DBModel.FK_tran_CreditorMill_mas_CreditorMill" FromRole="mas_CreditorMill" ToRole="tran_CreditorMill" />
+    <NavigationProperty Name="tran_CreditorMillPrePaid" Relationship="CS.BNP.DBModel.FK_tran_CreditorMillPrePaid_mas_CreditorMill" FromRole="mas_CreditorMill" ToRole="tran_CreditorMillPrePaid" />
+  </EntityType>
+  <Association Name="FK_mas_JobCreditor_mas_Creditor">
+    <End Type="CS.BNP.DBModel.mas_Creditor" Role="mas_Creditor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.mas_JobCreditor" Role="mas_JobCreditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Creditor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="mas_JobCreditor">
+        <PropertyRef Name="CreditorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_Creditor_mas_Creditor">
+    <End Type="CS.BNP.DBModel.mas_Creditor" Role="mas_Creditor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_Creditor" Role="tran_Creditor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Creditor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_Creditor">
+        <PropertyRef Name="CreditorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tran_CreditorMill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TranCreditorID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorMillID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorMillCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="VatInt" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="VatAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="NetAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <NavigationProperty Name="mas_CreditorMill" Relationship="CS.BNP.DBModel.FK_tran_CreditorMill_mas_CreditorMill" FromRole="tran_CreditorMill" ToRole="mas_CreditorMill" />
+    <NavigationProperty Name="tran_Creditor" Relationship="CS.BNP.DBModel.FK_tran_CreditorMill_tran_Creditor" FromRole="tran_CreditorMill" ToRole="tran_Creditor" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_tran_CreditorMill_mas_CreditorMill">
+    <End Type="CS.BNP.DBModel.mas_CreditorMill" Role="mas_CreditorMill" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorMill" Role="tran_CreditorMill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_CreditorMill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorMill">
+        <PropertyRef Name="CreditorMillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_CreditorMill_tran_Creditor">
+    <End Type="CS.BNP.DBModel.tran_Creditor" Role="tran_Creditor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorMill" Role="tran_CreditorMill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tran_Creditor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorMill">
+        <PropertyRef Name="TranCreditorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tran_CreditorPrePaid">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_Creditor" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Creditor" FromRole="tran_CreditorPrePaid" ToRole="mas_Creditor" />
+    <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Job" FromRole="tran_CreditorPrePaid" ToRole="mas_Job" />
+    <NavigationProperty Name="tran_BillingPeriod" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_tran_BillingPeriod" FromRole="tran_CreditorPrePaid" ToRole="tran_BillingPeriod" />
+  </EntityType>
+  <Association Name="FK_tran_CreditorPrePaid_mas_Creditor">
+    <End Type="CS.BNP.DBModel.mas_Creditor" Role="mas_Creditor" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorPrePaid" Role="tran_CreditorPrePaid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Creditor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorPrePaid">
+        <PropertyRef Name="CreditorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_CreditorPrePaid_mas_Job">
+    <End Type="CS.BNP.DBModel.mas_Job" Role="mas_Job" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorPrePaid" Role="tran_CreditorPrePaid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorPrePaid">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_CreditorPrePaid_tran_BillingPeriod">
+    <End Type="CS.BNP.DBModel.tran_BillingPeriod" Role="tran_BillingPeriod" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorPrePaid" Role="tran_CreditorPrePaid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tran_BillingPeriod">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorPrePaid">
+        <PropertyRef Name="BillingPeriodID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tran_CreditorMillPrePaid">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CreditorMillID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="mas_CreditorMill" Relationship="CS.BNP.DBModel.FK_tran_CreditorMillPrePaid_mas_CreditorMill" FromRole="tran_CreditorMillPrePaid" ToRole="mas_CreditorMill" />
+    <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_tran_CreditorMill_mas_Job" FromRole="tran_CreditorMillPrePaid" ToRole="mas_Job" />
+  </EntityType>
+  <Association Name="FK_tran_CreditorMillPrePaid_mas_CreditorMill">
+    <End Type="CS.BNP.DBModel.mas_CreditorMill" Role="mas_CreditorMill" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorMillPrePaid" Role="tran_CreditorMillPrePaid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_CreditorMill">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorMillPrePaid">
+        <PropertyRef Name="CreditorMillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tran_CreditorMill_mas_Job">
+    <End Type="CS.BNP.DBModel.mas_Job" Role="mas_Job" Multiplicity="1" />
+    <End Type="CS.BNP.DBModel.tran_CreditorMillPrePaid" Role="tran_CreditorMillPrePaid" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mas_Job">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tran_CreditorMillPrePaid">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwrpt_TranCreditorMill">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TransactionCreditorCode" />
+      <PropertyRef Name="BillingPeriodID" />
+      <PropertyRef Name="BillingPeriodCode" />
+      <PropertyRef Name="BillingDateFrom" />
+      <PropertyRef Name="BillingDateTo" />
+      <PropertyRef Name="BillingStatus" />
+      <PropertyRef Name="TransactionDate" />
+      <PropertyRef Name="TransactionSeq" />
+      <PropertyRef Name="DocumentNo" />
+      <PropertyRef Name="IsOutsidePeriod" />
+      <PropertyRef Name="CreditorID" />
+      <PropertyRef Name="CreditorCode" />
+      <PropertyRef Name="CreditorName" />
+      <PropertyRef Name="CreditorAddress" />
+      <PropertyRef Name="CreditorTel" />
+      <PropertyRef Name="CreditorContact" />
+      <PropertyRef Name="JobID" />
+      <PropertyRef Name="JobCode" />
+      <PropertyRef Name="JobDateStart" />
+      <PropertyRef Name="JobName" />
+      <PropertyRef Name="DebtorID" />
+      <PropertyRef Name="DebtorCode" />
+      <PropertyRef Name="DebtorName" />
+      <PropertyRef Name="DebtorAddress" />
+      <PropertyRef Name="DebtorTel" />
+      <PropertyRef Name="DebtorContact" />
+      <PropertyRef Name="Budget" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ProductCode" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="ProductUnit" />
+      <PropertyRef Name="ProductPrice" />
+      <PropertyRef Name="CarLicense" />
+      <PropertyRef Name="TranWeight" />
+      <PropertyRef Name="TranBuyPrice" />
+      <PropertyRef Name="TranDiscount" />
+      <PropertyRef Name="IsVat" />
+      <PropertyRef Name="TranVat" />
+      <PropertyRef Name="TotalBeforeDiscount" />
+      <PropertyRef Name="TotalBeforeVat" />
+      <PropertyRef Name="TotalAmount" />
+      <PropertyRef Name="IsPaid" />
+      <PropertyRef Name="IsCancel" />
+      <PropertyRef Name="CreatedBy" />
+      <PropertyRef Name="CreatedDate" />
+      <PropertyRef Name="BillingDate" />
+      <PropertyRef Name="TranUnitQuantity" />
+      <PropertyRef Name="PrepaidTotalAmount" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionCreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BillingPeriodID" Type="Int32" Nullable="false" />
+    <Property Name="BillingPeriodCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BillingDateFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingDateTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BillingStatus" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TransactionSeq" Type="Int32" Nullable="false" />
+    <Property Name="DocumentNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsOutsidePeriod" Type="Boolean" Nullable="false" />
+    <Property Name="CreditorID" Type="Int32" Nullable="false" />
+    <Property Name="CreditorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="JobCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="JobDateStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorID" Type="Int32" Nullable="false" />
+    <Property Name="DebtorCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorAddress" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorTel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DebtorContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductUnit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Reference" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CarLicense" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranWeight" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="TranBuyPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TranDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsVat" Type="Boolean" Nullable="false" />
+    <Property Name="TranVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeDiscount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalBeforeVat" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+    <Property Name="PaidBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="IsCancel" Type="Boolean" Nullable="false" />
+    <Property Name="CancelBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CancelDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BillingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TranUnitQuantity" Type="Int32" Nullable="false" />
+    <Property Name="PrepaidTotalAmount" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+    <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TranMillID" Type="Int32" />
+    <Property Name="CreditorMillID" Type="Int32" />
+    <Property Name="CreditorMillCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreditorMillTaxID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MillIsVat" Type="Boolean" />
+    <Property Name="MillVatInt" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MillVatAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MillNetAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MillTotalAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MillRemark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
