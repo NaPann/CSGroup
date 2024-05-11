@@ -51,6 +51,7 @@
             this.colCreditorName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProductSellPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSourceFrom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridEdit = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -153,6 +154,7 @@
             this.colCreditorName,
             this.colProductID,
             this.colProductName,
+            this.colUnit,
             this.colProductSellPrice,
             this.colSourceFrom,
             this.gridEdit,
@@ -223,6 +225,14 @@
             this.colProductName.VisibleIndex = 2;
             this.colProductName.Width = 145;
             // 
+            // colUnit
+            // 
+            this.colUnit.Caption = "หน่วยนับ";
+            this.colUnit.FieldName = "TranUnit";
+            this.colUnit.Name = "colUnit";
+            this.colUnit.Visible = true;
+            this.colUnit.VisibleIndex = 4;
+            // 
             // colProductSellPrice
             // 
             this.colProductSellPrice.Caption = "ราคาซื้อ";
@@ -244,7 +254,7 @@
             this.colSourceFrom.OptionsColumn.Printable = DevExpress.Utils.DefaultBoolean.False;
             this.colSourceFrom.OptionsColumn.ReadOnly = true;
             this.colSourceFrom.Visible = true;
-            this.colSourceFrom.VisibleIndex = 4;
+            this.colSourceFrom.VisibleIndex = 5;
             this.colSourceFrom.Width = 101;
             // 
             // gridEdit
@@ -255,7 +265,7 @@
             this.gridEdit.OptionsColumn.ReadOnly = true;
             this.gridEdit.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridEdit.Visible = true;
-            this.gridEdit.VisibleIndex = 5;
+            this.gridEdit.VisibleIndex = 6;
             // 
             // gridDelete
             // 
@@ -265,7 +275,7 @@
             this.gridDelete.OptionsColumn.ReadOnly = true;
             this.gridDelete.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridDelete.Visible = true;
-            this.gridDelete.VisibleIndex = 6;
+            this.gridDelete.VisibleIndex = 7;
             // 
             // panel4
             // 
@@ -658,5 +668,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSourceFrom;
         private DevExpress.XtraGrid.Columns.GridColumn colSourceFrom;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnit;
     }
 }

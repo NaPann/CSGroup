@@ -233,7 +233,8 @@ namespace CS.BNP.App.Transaction.Debitor
             dt.Columns.Add(new DataColumn("ProductPriceExactly", typeof(System.Decimal)));
             dt.Columns.Add(new DataColumn("TotalAmount", typeof(System.Decimal)));
             dt.Columns.Add(new DataColumn("DocNo", typeof(System.String)));
-            dt.AcceptChanges();
+			dt.Columns.Add(new DataColumn("CNo", typeof(System.String)));
+			dt.AcceptChanges();
         }
         private void frmAddEditDebitorCreditor_Load(object sender, EventArgs e)
         {
@@ -272,11 +273,12 @@ namespace CS.BNP.App.Transaction.Debitor
                             JobQuantity = s.tran_Creditor.TranWeight,
                             ProductPriceExactly = s.TranSellPrice,
                             TotalAmount = s.TotalAmount,
-                            DocNo = s.DocNo
+                            DocNo = s.DocNo,
+                            CNo = s.tran_Creditor.DocumentNo
                         }).ToList();
                         foreach (var item in _detail)
                         {
-                            this.dt.Rows.Add(item.iNo, item.ID, item.TransactionCreditorID, item.TransactionDate,item.ProductID, item.ProductCode, item.ProductName, item.JobQuantity, item.ProductPriceExactly, item.TotalAmount, item.DocNo);
+                            this.dt.Rows.Add(item.iNo, item.ID, item.TransactionCreditorID, item.TransactionDate,item.ProductID, item.ProductCode, item.ProductName, item.JobQuantity, item.ProductPriceExactly, item.TotalAmount, item.DocNo, item.CNo);
                         }
                         this.dt.AcceptChanges();
                         this.gridControlCreditor.DataSource = this.dt;

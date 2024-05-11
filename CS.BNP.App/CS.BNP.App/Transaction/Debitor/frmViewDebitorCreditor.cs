@@ -45,6 +45,9 @@ namespace CS.BNP.App.Transaction.Debitor
                 ControlBTN(true);
                 db = new Entity.CSBNPEntities();
                 int _condition = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
+
+                var _job = db.mas_Job.Where(w => w.IsApprove).ToList();
+
                 var data = db.tran_DebitorRec.Where(w=>w.DebitorPeriodID == _condition).AsEnumerable().Select((s, inx) => new
                 {
                     iNo = inx + 1,
@@ -57,8 +60,15 @@ namespace CS.BNP.App.Transaction.Debitor
                     DebitorName = s.mas_Debtor.DebtorName,
                     IsReceived = s.IsReceived,
                     CheckedBy = s.CheckedBy,
-                    TotalAmount = s.TotalAmountByBill
-                }).ToList();
+                    TotalAmount = s.TotalAmountByBill,
+
+                    Job = s.tran_DebitorRecDetail.FirstOrDefault().tran_Creditor.mas_Job.JobName,
+					Product = s.tran_DebitorRecDetail.FirstOrDefault().tran_Creditor.mas_Product.ProductName,
+					Qty = s.tran_DebitorRecDetail.Sum(sm=>sm.tran_Creditor.TranUnitQuantity),
+					Price = s.tran_DebitorRecDetail.FirstOrDefault().TranSellPrice
+
+
+				}).ToList();
                 this.gridControl.DataSource = data;
                 this.gridControl.ForceInitialize();
             }
@@ -164,11 +174,11 @@ namespace CS.BNP.App.Transaction.Debitor
         {
             if (gridView.GetRowCellValue(this.gridView.FocusedRowHandle, "IsReceived").ToString() == "True")
             {
-                e.Cancel = (gridView.FocusedColumn != this.gridView.Columns[9]) && (gridView.FocusedColumn != this.gridView.Columns[10]);
+                e.Cancel = (gridView.FocusedColumn != this.gridView.Columns[13]) && (gridView.FocusedColumn != this.gridView.Columns[14]);
             }
             else
             {
-                e.Cancel = (gridView.FocusedColumn != this.gridView.Columns[7]) && (gridView.FocusedColumn != this.gridView.Columns[9]) && (gridView.FocusedColumn != this.gridView.Columns[10]);
+                e.Cancel = (gridView.FocusedColumn != this.gridView.Columns[11]) && (gridView.FocusedColumn != this.gridView.Columns[13]) && (gridView.FocusedColumn != this.gridView.Columns[14]);
             }
         }
     }

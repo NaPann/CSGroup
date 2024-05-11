@@ -42,7 +42,8 @@ namespace CS.BNP.App.Reports.Letter
         {
             if (this.cbDebitorPeriod.SelectedIndex > 0)
             {
-                int _condition = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
+				splashScreenManager1.ShowWaitForm();
+				int _condition = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
                 var tmpdata = db.vwrpt_TransactionDebitor_new.Where(w => w.DebitorPeriodID == _condition).AsEnumerable().Select((s, inx) => new
                 {
                     iNo = inx + 1,
@@ -107,8 +108,8 @@ namespace CS.BNP.App.Reports.Letter
             
                 this.gridControl.DataSource = data.OrderBy(o=>o.ProductID);
                 this.gridControl.ForceInitialize();
-
-                ControlBTN(this.gridView.RowCount > 0);
+				splashScreenManager1.CloseWaitForm();
+				ControlBTN(this.gridView.RowCount > 0);
             }
             else
             {
@@ -135,7 +136,8 @@ namespace CS.BNP.App.Reports.Letter
             }
             else
             {
-                frmLetterViewer rptViewer = new frmLetterViewer();
+				splashScreenManager1.ShowWaitForm();
+				frmLetterViewer rptViewer = new frmLetterViewer();
                 rptViewer.keyId = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
                 rptViewer.jobId = int.Parse(this.cbJob.SelectedValue.ToString()); rptViewer.debitorId = int.Parse(this.cbDebitor.SelectedValue.ToString());
 
@@ -144,7 +146,8 @@ namespace CS.BNP.App.Reports.Letter
 
                 rptViewer.PrintLetter();
                 rptViewer.Show();
-            }
+				splashScreenManager1.CloseWaitForm();
+			}
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -154,13 +157,14 @@ namespace CS.BNP.App.Reports.Letter
 
         private void cbDebitorPeriod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.btnReport.Visible = this.cbDebitorPeriod.SelectedIndex > 0;
+			DGV();
+			this.btnReport.Visible = this.cbDebitorPeriod.SelectedIndex > 0;
             this.chkShowPO.Visible = this.cbDebitorPeriod.SelectedIndex > 0;
-            DGV();
 
             if (this.cbDebitorPeriod.SelectedIndex > 0)
             {
-                int _dp = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());  
+			
+				int _dp = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());  
                 var dataD = db.tran_DebitorRecDetail.Where(w=>w.tran_DebitorRec.DebitorPeriodID == _dp).OrderBy(o => o.ID).Select(s => new
                 {
                     val = s.tran_DebitorRec.DebitorID,
@@ -180,7 +184,7 @@ namespace CS.BNP.App.Reports.Letter
                 this.cbJob.DataSource = dataJob;
                 this.cbJob.DisplayMember = "txt";
                 this.cbJob.ValueMember = "val";
-            }
+			}
             else
             {
                 this.cbJob.DataSource = null; this.cbDebitor.DataSource = null;

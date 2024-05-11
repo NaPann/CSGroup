@@ -42,6 +42,7 @@ namespace CS.BNP.App.SystemSetup.Job
             dt.Columns.Add(new DataColumn("ProductName", typeof(System.String)));
             dt.Columns.Add(new DataColumn("ProductSellPrice", typeof(System.Decimal)));
             dt.Columns.Add(new DataColumn("SourceFrom", typeof(System.String)));
+            dt.Columns.Add(new DataColumn("TranUnit", typeof(System.String)));
             dt.AcceptChanges();
         }
         private void BindingControl()
@@ -180,12 +181,13 @@ namespace CS.BNP.App.SystemSetup.Job
                             ProductCode = s.mas_Product.ProductCode,
                             ProductName = s.mas_Product.ProductName,
                             ProductSellPrice = s.ProductSellPrice,
-                            SourceFrom = s.SourceFrom
+                            SourceFrom = s.SourceFrom,
+                            TranUnit = s.mas_Product.ProductUnit
                         }).ToList();
                         foreach (var item in _detail)
                         {
                             this.dt.Rows.Add(item.iNo, item.ID, item.JobID, item.CreditorID, item.CreditorName, item.ProductID, 
-                                item.ProductCode, item.ProductName, item.ProductSellPrice, item.SourceFrom);
+                                item.ProductCode, item.ProductName, item.ProductSellPrice, item.SourceFrom,item.TranUnit);
                         }
                         this.dt.AcceptChanges();
                         this.gridControl.DataSource = this.dt;

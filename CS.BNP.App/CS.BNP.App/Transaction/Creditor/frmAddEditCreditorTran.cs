@@ -47,7 +47,7 @@ namespace CS.BNP.App.Transaction.Creditor
                 this.txtCarLicense.Text = string.Empty;
                 this.txtDriver.Text = string.Empty;
 
-                this.numTranWeight.Value = 0; this.txtUnit.Text = string.Empty; /*this.numUnitPrice.Value = 0;*/ this.txtNetAmount.Text = "0.00";
+                this.numTranWeight.Value = 0; /*this.txtUnit.Text = string.Empty; this.numUnitPrice.Value = 0;*/ this.txtNetAmount.Text = "0.00";
                 this.numDiscount.Value = 0; this.txtBeforeVat.Text = "0.00"; this.numVat.Value = 0; this.txtVat.Text = "0.00";
                 this.txtTotalAmount.Text = "0.00"; this.lblPO.Text = "0.00";
 

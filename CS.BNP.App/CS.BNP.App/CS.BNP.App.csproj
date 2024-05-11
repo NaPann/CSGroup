@@ -269,6 +269,12 @@
     <Compile Include="Reports\Letter\rptLetterFirst.Designer.cs">
       <DependentUpon>rptLetterFirst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Letter\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Letter\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Mills\frmMillConsolidate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +593,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Letter\rptLetterFirst.resx">
       <DependentUpon>rptLetterFirst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Letter\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Mills\frmMillConsolidate.resx">
       <DependentUpon>frmMillConsolidate.cs</DependentUpon>
