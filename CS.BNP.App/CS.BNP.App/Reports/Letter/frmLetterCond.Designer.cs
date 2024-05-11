@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLetterCond));
-			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+			DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
 			this.btnExit = new DevExpress.XtraEditors.SimpleButton();
 			this.btnReport = new DevExpress.XtraEditors.SimpleButton();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.cbDocNo = new System.Windows.Forms.ComboBox();
 			this.chkShowPO = new System.Windows.Forms.CheckBox();
 			this.cbJob = new System.Windows.Forms.ComboBox();
 			this.cbDebitor = new System.Windows.Forms.ComboBox();
@@ -97,7 +98,7 @@
 			this.btnExit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
 			this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
 			this.btnExit.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-			this.btnExit.Location = new System.Drawing.Point(898, 11);
+			this.btnExit.Location = new System.Drawing.Point(1072, 11);
 			this.btnExit.Name = "btnExit";
 			this.btnExit.Size = new System.Drawing.Size(92, 24);
 			this.btnExit.TabIndex = 5;
@@ -140,6 +141,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.panel1.Controls.Add(this.cbDocNo);
 			this.panel1.Controls.Add(this.chkShowPO);
 			this.panel1.Controls.Add(this.cbJob);
 			this.panel1.Controls.Add(this.cbDebitor);
@@ -152,8 +154,21 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 36);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1129, 84);
+			this.panel1.Size = new System.Drawing.Size(1267, 84);
 			this.panel1.TabIndex = 19;
+			// 
+			// cbDocNo
+			// 
+			this.cbDocNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.cbDocNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+			this.cbDocNo.DropDownHeight = 250;
+			this.cbDocNo.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.cbDocNo.FormattingEnabled = true;
+			this.cbDocNo.IntegralHeight = false;
+			this.cbDocNo.Location = new System.Drawing.Point(898, 11);
+			this.cbDocNo.Name = "cbDocNo";
+			this.cbDocNo.Size = new System.Drawing.Size(168, 24);
+			this.cbDocNo.TabIndex = 11;
 			// 
 			// chkShowPO
 			// 
@@ -255,18 +270,18 @@
 			// btnDelete
 			// 
 			this.btnDelete.AutoHeight = false;
-			editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+			editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
 			this.btnDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
 			// 
 			// btnEdit
 			// 
 			this.btnEdit.AutoHeight = false;
-			editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+			editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
 			this.btnEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
 			this.btnEdit.Name = "btnEdit";
 			this.btnEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
 			// 
@@ -490,7 +505,7 @@
             this.btnEdit,
             this.btnDelete,
             this.CheckEditPaid});
-			this.gridControl.Size = new System.Drawing.Size(1129, 365);
+			this.gridControl.Size = new System.Drawing.Size(1267, 365);
 			this.gridControl.TabIndex = 18;
 			this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView});
@@ -502,7 +517,7 @@
 			this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelSearch.Location = new System.Drawing.Point(0, 0);
 			this.panelSearch.Name = "panelSearch";
-			this.panelSearch.Size = new System.Drawing.Size(1129, 36);
+			this.panelSearch.Size = new System.Drawing.Size(1267, 36);
 			this.panelSearch.TabIndex = 17;
 			// 
 			// label1
@@ -525,7 +540,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1129, 485);
+			this.ClientSize = new System.Drawing.Size(1267, 485);
 			this.ControlBox = false;
 			this.Controls.Add(this.gridControl);
 			this.Controls.Add(this.panel1);
@@ -593,5 +608,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTranUnit;
         private System.Windows.Forms.CheckBox chkShowPO;
 		private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+		private System.Windows.Forms.ComboBox cbDocNo;
 	}
 }

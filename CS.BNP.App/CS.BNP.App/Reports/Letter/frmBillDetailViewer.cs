@@ -18,7 +18,11 @@ namespace CS.BNP.App.Reports.Letter
         }
         public int keyId = 0; public int secondKeyId = 0;
         public int jobId = 0; public int debitorId = 0;
-        public int[] tranCreditorId; public DateTime dtStart; public DateTime dtEnd;
+
+		//new cond
+		public string docNo = "";
+
+		public int[] tranCreditorId; public DateTime dtStart; public DateTime dtEnd;
         Entity.CSBNPEntities db = new Entity.CSBNPEntities();
         public void PrintBillDetail()
         {
@@ -29,7 +33,10 @@ namespace CS.BNP.App.Reports.Letter
             if (debitorId > 0)
                 tmp = tmp.Where(w => w.DebitorID == debitorId).ToList();
 
-            var tmpdataLetter = tmp.Where(w => w.DebitorPeriodID == keyId).AsEnumerable().Select((s, inx) => new
+			if (!string.IsNullOrWhiteSpace(docNo))
+				tmp = tmp.Where(w => w.DocNo == docNo).ToList();
+
+			var tmpdataLetter = tmp.Where(w => w.DebitorPeriodID == keyId).AsEnumerable().Select((s, inx) => new
             {
                 iNo = inx + 1,
                 DebitorID = s.DebitorID,
@@ -48,7 +55,8 @@ namespace CS.BNP.App.Reports.Letter
                 TranSellPrice = s.TranSellPrice,
                 TotalAmount = s.TranSellPrice * s.TranWeight,
                 TranVat = (s.TranVat / 100) * (s.TranSellPrice * s.TranWeight),
-                TranUnit = s.TranUnit
+                TranUnit = s.TranUnit,
+                DocNo = s.DocNo,
             }).ToList();
 
             var dataBillDetail = tmpdataLetter.GroupBy(g => new
@@ -66,7 +74,8 @@ namespace CS.BNP.App.Reports.Letter
                 ProductCode = g.ProductCode,
                 TranSellPrice = g.TranSellPrice,
                 TransactionDate = g.TransactionDate,
-                TranUnit = g.TranUnit
+                TranUnit = g.TranUnit,
+                DocNo = g.DocNo,
             }).Select(s => new
             {
                 DebitorID = s.Key.DebitorID,
@@ -86,6 +95,7 @@ namespace CS.BNP.App.Reports.Letter
                 TranUnitQuantityCr = s.Count(),
                 TranVat = s.Sum(sm => sm.TranVat),
                 TransactionDate = s.Key.TransactionDate,
+                DocNo = s.Key.DocNo,
                 TranUnit = s.Key.TranUnit
             }).ToList();
 

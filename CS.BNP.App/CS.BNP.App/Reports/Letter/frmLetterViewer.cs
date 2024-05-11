@@ -21,8 +21,11 @@ namespace CS.BNP.App.Reports.Letter
 
         public int jobId = 0; public int debitorId = 0;
 
-        //show PO
-        public bool showPO = true;
+		//new cond
+		public string docNo = "";
+
+		//show PO
+		public bool showPO = true;
 
         public int[] tranCreditorId; public DateTime dtStart; public DateTime dtEnd;
 
@@ -38,9 +41,12 @@ namespace CS.BNP.App.Reports.Letter
 
             var _jobDetail = db.mas_JobDetail.ToList();
             if (jobId > 0)
-                _jobDetail = _jobDetail.Where(w => w.JobID == jobId).ToList();   
+                _jobDetail = _jobDetail.Where(w => w.JobID == jobId).ToList();
 
-            var tmpdataLetter = tmp.Where(w => w.DebitorPeriodID == keyId).AsEnumerable().Select((s, inx) => new
+			if (!string.IsNullOrWhiteSpace(docNo))
+				tmp = tmp.Where(w => w.DocNo == docNo).ToList();
+
+			var tmpdataLetter = tmp.Where(w => w.DebitorPeriodID == keyId).AsEnumerable().Select((s, inx) => new
             {
                 iNo = inx + 1,
                 CheckedBy = s.CheckedBy,

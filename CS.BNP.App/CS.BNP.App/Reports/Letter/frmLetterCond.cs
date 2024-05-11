@@ -140,9 +140,9 @@ namespace CS.BNP.App.Reports.Letter
 				frmLetterViewer rptViewer = new frmLetterViewer();
                 rptViewer.keyId = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
                 rptViewer.jobId = int.Parse(this.cbJob.SelectedValue.ToString()); rptViewer.debitorId = int.Parse(this.cbDebitor.SelectedValue.ToString());
-
-                //Show PO
-                rptViewer.showPO = this.chkShowPO.Checked;
+                rptViewer.docNo = this.cbDocNo.SelectedValue.ToString();
+				//Show PO
+				rptViewer.showPO = this.chkShowPO.Checked;
 
                 rptViewer.PrintLetter();
                 rptViewer.Show();
@@ -184,6 +184,16 @@ namespace CS.BNP.App.Reports.Letter
                 this.cbJob.DataSource = dataJob;
                 this.cbJob.DisplayMember = "txt";
                 this.cbJob.ValueMember = "val";
+
+				var dataDocNo = db.tran_DebitorRecDetail.Where(w => w.tran_DebitorRec.DebitorPeriodID == _dp).OrderBy(o => o.ID).Select(s => new
+				{
+					val = s.DocNo,
+					txt = s.DocNo
+				}).Distinct().ToList();
+				dataDocNo.Insert(0, new { val = "", txt = "-- เลือกเลขที่หนังสือ --" });
+				this.cbDocNo.DataSource = dataDocNo;
+				this.cbDocNo.DisplayMember = "txt";
+				this.cbDocNo.ValueMember = "val";
 			}
             else
             {
@@ -200,12 +210,15 @@ namespace CS.BNP.App.Reports.Letter
             }
             else
             {
-                frmBillDetailViewer rptViewer = new frmBillDetailViewer();
+				splashScreenManager1.ShowWaitForm();
+				frmBillDetailViewer rptViewer = new frmBillDetailViewer();
                 rptViewer.keyId = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
                 rptViewer.jobId = int.Parse(this.cbJob.SelectedValue.ToString()); rptViewer.debitorId = int.Parse(this.cbDebitor.SelectedValue.ToString());
-                rptViewer.PrintBillDetail();
+				rptViewer.docNo = this.cbDocNo.SelectedValue.ToString();
+				rptViewer.PrintBillDetail();
                 rptViewer.Show();
-            }
+				splashScreenManager1.CloseWaitForm();
+			}
         }
 
         private void btnEachDay_Click(object sender, EventArgs e)
@@ -217,12 +230,15 @@ namespace CS.BNP.App.Reports.Letter
             }
             else
             {
-                frmBillEachDayViewer rptViewer = new frmBillEachDayViewer();
+				splashScreenManager1.ShowWaitForm();
+				frmBillEachDayViewer rptViewer = new frmBillEachDayViewer();
                 rptViewer.keyId = int.Parse(this.cbDebitorPeriod.SelectedValue.ToString());
                 rptViewer.jobId = int.Parse(this.cbJob.SelectedValue.ToString()); rptViewer.debitorId = int.Parse(this.cbDebitor.SelectedValue.ToString());
-                rptViewer.PrintBillEachDay();
+				rptViewer.docNo = this.cbDocNo.SelectedValue.ToString();
+				rptViewer.PrintBillEachDay();
                 rptViewer.Show();
-            }
+				splashScreenManager1.CloseWaitForm();
+			}
         }
     }
 }
