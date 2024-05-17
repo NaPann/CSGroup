@@ -574,16 +574,24 @@ namespace CS.BNP.App.Transaction.Creditor
                     this.txtCreditorName.Text = _creditor.CreditorContact + " (" + _creditor.CreditorTel + " : " + _creditor.CreditorAddress + ") ";
                     if (this.cbCreditor.SelectedIndex > 0)
                     {
-                        int _jobId = int.Parse(this.cbJob.SelectedValue.ToString()); int _prodId = int.Parse(this.cbProduct.SelectedValue.ToString());
-                        //From Crdeitor New
-                        var _setPrice = db.mas_JobCreditor.Where(w => w.CreditorID == _creditorId && w.JobID == _jobId && w.ProductID == _prodId).FirstOrDefault();
-                        if (_setPrice == null)
+                        try
                         {
-                            gloService.Announce("ไม่พบราคาขายของเจ้าหนี้รายนี้ .. โปรดตรวจสอบ !!", AnnounceType.Warning);
-                            this.cbProduct.SelectedIndex = 0; this.cbCreditor.SelectedIndex = 0;
-                            return;
+                            int _jobId = int.Parse(this.cbJob.SelectedValue.ToString()); int _prodId = int.Parse(this.cbProduct.SelectedValue.ToString());
+                            //From Crdeitor New
+                            var _setPrice = db.mas_JobCreditor.Where(w => w.CreditorID == _creditorId && w.JobID == _jobId && w.ProductID == _prodId).FirstOrDefault();
+                            if (_setPrice == null)
+                            {
+                                gloService.Announce("ไม่พบราคาขายของเจ้าหนี้รายนี้ .. โปรดตรวจสอบ !!", AnnounceType.Warning);
+                                this.cbProduct.SelectedIndex = 0; this.cbCreditor.SelectedIndex = 0;
+                                return;
+                            }
+                            this.numUnitPrice.Value = (_setPrice == null ? 0 : _setPrice.ProductSellPrice);
                         }
-                        this.numUnitPrice.Value = (_setPrice == null ? 0 : _setPrice.ProductSellPrice);
+                        catch
+                        {
+
+                        }
+                      
                     }
                 }
             }

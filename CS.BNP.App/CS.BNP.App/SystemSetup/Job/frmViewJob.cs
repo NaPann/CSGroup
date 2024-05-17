@@ -104,11 +104,16 @@ namespace CS.BNP.App.SystemSetup.Job
         private void btnEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             frmAddEditJob frmEdit = new frmAddEditJob();
+
+            int _bfInx = gridView1.GetSelectedRows().FirstOrDefault();
+
             frmEdit.iType = int.Parse(this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString());
             frmEdit.BringToFront();
             frmEdit.StartPosition = FormStartPosition.CenterParent;
             frmEdit.ShowDialog();
             DGV();
+
+            gridView1.FocusedRowHandle = _bfInx;
         }
 
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -138,11 +143,23 @@ namespace CS.BNP.App.SystemSetup.Job
         private void btnAddCreditor_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             frmAddEditJobCreditor frmEdit = new frmAddEditJobCreditor();
+            int _bfInx = gridView1.GetSelectedRows().FirstOrDefault();
             frmEdit.jobId = int.Parse(this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString());
             frmEdit.BringToFront();
             frmEdit.StartPosition = FormStartPosition.CenterParent;
             frmEdit.ShowDialog();
             DGV();
+            gridView1.FocusedRowHandle = _bfInx;
+        }
+
+        private void gridControl_TabIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            //MessageBox.Show("x:" + gridView1.GetSelectedRows().FirstOrDefault());
         }
     }
 }

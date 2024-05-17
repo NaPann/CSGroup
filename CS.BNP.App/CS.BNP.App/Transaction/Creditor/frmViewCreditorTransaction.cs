@@ -108,11 +108,12 @@ namespace CS.BNP.App.Transaction.Creditor
             int _bpId = int.Parse(this.cbBillingPeriod.SelectedValue.ToString());
             var _bp = db.tran_BillingPeriod.Where(w => w.ID == _bpId).FirstOrDefault();
             frm.StartDate = _bp.BillingDateFrom; frm.EndDate = _bp.BillingDateTo; frm._bpId = _bpId;
-
-            frm.BringToFront();
+			int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+			frm.BringToFront();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
-        }
+			gridView.FocusedRowHandle = _bfInx;
+		}
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -122,7 +123,8 @@ namespace CS.BNP.App.Transaction.Creditor
         private void btnEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             frmAddEditCreditorTran frmEdit = new frmAddEditCreditorTran();
-            frmEdit.iType = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns[0]).ToString());
+			int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+			frmEdit.iType = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns[0]).ToString());
             int _bpId = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns["BillingPeriodID"]).ToString());
             var _bp = db.tran_BillingPeriod.Where(w => w.ID == _bpId).FirstOrDefault();
             frmEdit.StartDate = _bp.BillingDateFrom; frmEdit.EndDate = _bp.BillingDateTo; frmEdit._bpId = _bpId;
@@ -130,14 +132,16 @@ namespace CS.BNP.App.Transaction.Creditor
             frmEdit.StartPosition = FormStartPosition.CenterParent;
             frmEdit.ShowDialog();
             DGV();
-        }
+			gridView.FocusedRowHandle = _bfInx;
+		}
 
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (gloService.Sure("คุณต้องการลบข้อมูลรายการนี้ ?") == DialogResult.Yes)
             {
                 int _deldata = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns[0]).ToString());
-                using (var db = new Entity.CSBNPEntities())
+				int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+				using (var db = new Entity.CSBNPEntities())
                 {
                     var data = db.tran_Creditor.Where(w => w.ID == _deldata).FirstOrDefault();
                     if (data != null)
@@ -161,8 +165,9 @@ namespace CS.BNP.App.Transaction.Creditor
                     db.SaveChanges();
                 }
                 DGV();
-                //gloService.Announce("ลบข้อมูลเรียบร้อย", AnnounceType.Infomation);
-            }
+				gridView.FocusedRowHandle = _bfInx;
+				//gloService.Announce("ลบข้อมูลเรียบร้อย", AnnounceType.Infomation);
+			}
             else return;
         }
 
@@ -181,14 +186,16 @@ namespace CS.BNP.App.Transaction.Creditor
                 }
                 else
                 {
-                    paid.IsPaid = true;
+					int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+					paid.IsPaid = true;
                     paid.PaidBy = Variable.CurrentProfile.username;
                     paid.PaidDate = DateTime.Now;
                     paid.IsCancel = false;
                     db.SaveChanges();
                     DGV();
                     gloService.Announce("บันทึกการชำระ .. เรียบร้อยแล้ว", AnnounceType.Infomation);
-                }
+					gridView.FocusedRowHandle = _bfInx;
+				}
             }
             else return;
         }
@@ -221,13 +228,15 @@ namespace CS.BNP.App.Transaction.Creditor
                     }
                     else
                     {
-                        paid.ForEach(fe => fe.IsPaid = true);
+						int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+						paid.ForEach(fe => fe.IsPaid = true);
                         paid.ForEach(fe => fe.PaidBy = Variable.CurrentProfile.username);
                         paid.ForEach(fe => fe.PaidDate = DateTime.Now);
                         paid.ForEach(fe => fe.IsCancel = false);
                         db.SaveChanges();
                         DGV();
-                        gloService.Announce("บันทึกการชำระ .. เรียบร้อยแล้ว", AnnounceType.Infomation);
+						gridView.FocusedRowHandle = _bfInx;
+						gloService.Announce("บันทึกการชำระ .. เรียบร้อยแล้ว", AnnounceType.Infomation);
                     }
                 }
                 else return;
