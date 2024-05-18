@@ -604,7 +604,7 @@ namespace CS.BNP.App.Transaction.Creditor
         {
             if (this.chkOutsidePeriod.Checked)
             {
-                this.dtpTransactionDate.MinDate = DateTime.Now.AddYears(-1); this.dtpTransactionDate.MaxDate = DateTime.Now.AddYears(1);
+                this.dtpTransactionDate.MinDate = DateTime.Now.AddYears(-999); this.dtpTransactionDate.MaxDate = DateTime.Now.AddYears(1);
                 this.dtpTransactionDate.Checked = false;
             }
             else

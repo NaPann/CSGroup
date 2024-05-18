@@ -259,11 +259,19 @@ namespace CS.BNP.App.EmployeeSecurity
                     val = s.Username,
                     txt = s.EmployeeFirstName + " " + s.EmployeeLastName
                 }).ToList();
-                data.Insert(0, new { val = "", txt = "-- เลือกผู้ที่สามารถ Approve --" });
-                this.cbApprover.DataSource = data;
-                this.cbApprover.DisplayMember = "txt";
-                this.cbApprover.ValueMember = "val";
-            }
+                //data.Insert(0, new { val = "", txt = "-- เลือกผู้ที่สามารถ Approve --" });
+                //this.cbApprover.DataSource = data;
+                //this.cbApprover.DisplayMember = "txt";
+                //this.cbApprover.ValueMember = "val";
+
+                foreach (var item in data)
+                {
+                    this.cbApp.Properties.Items
+                        .Add(item.val, item.txt);
+                }
+				this.cbApp.Properties.DisplayMember = "txt";
+				this.cbApp.Properties.ValueMember = "val";
+			}
         }
         private byte _saveexit = 0;
         private void btnSaveExit_Click(object sender, EventArgs e)

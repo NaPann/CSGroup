@@ -261,11 +261,12 @@ namespace CS.BNP.App.SystemSetup.Job
                             ProductCode = s.mas_Product.ProductCode,
                             ProductName = s.mas_Product.ProductName,
                             JobQuantity = s.JobQuantity,
-                            ProductPriceExactly = s.ProductPriceExactly
+                            ProductPriceExactly = s.ProductPriceExactly,
+                            TranUnit = s.mas_Product.ProductUnit
                         }).ToList();
                         foreach (var item in _detail)
                         {
-                            this.dt.Rows.Add(item.iNo, item.ID, item.JobID, item.ProductID, item.ProductCode, item.ProductName, item.JobQuantity, item.ProductPriceExactly);
+                            this.dt.Rows.Add(item.iNo, item.ID, item.JobID, item.ProductID, item.ProductCode, item.ProductName, item.JobQuantity, item.ProductPriceExactly, item.TranUnit);
                         }
                         this.dt.AcceptChanges();
                         this.gridControl.DataSource = this.dt;
@@ -328,7 +329,8 @@ namespace CS.BNP.App.SystemSetup.Job
             dt.Columns.Add(new DataColumn("ProductName", typeof(System.String)));
             dt.Columns.Add(new DataColumn("JobQuantity", typeof(System.Decimal)));
             dt.Columns.Add(new DataColumn("ProductPriceExactly", typeof(System.Decimal)));
-            dt.AcceptChanges();
+			dt.Columns.Add(new DataColumn("TranUnit", typeof(System.String)));
+			dt.AcceptChanges();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -369,11 +371,15 @@ namespace CS.BNP.App.SystemSetup.Job
 
             if (_ex == 0)
             {
-                this.dt.Rows.Add(this.gridView.RowCount + 1, 0, 0,
+                var db = new Entity.CSBNPEntities();
+                int _proID = int.Parse(this.cbProduct.SelectedValue.ToString());
+				var _productUnit = db.mas_Product.Where(w=>!w.IsService && w.ID == _proID).FirstOrDefault();
+
+				this.dt.Rows.Add(this.gridView.RowCount + 1, 0, 0,
                                  int.Parse(this.cbProduct.SelectedValue.ToString()),
                                this.cbProduct.Text.ToString().Split(':')[1].Trim(),
                                this.cbProduct.Text.ToString().Split(':')[0].Trim(),
-                               decimal.Parse(this.txtQuantity.Text.Trim()), this.numProductPrice.Value);
+                               decimal.Parse(this.txtQuantity.Text.Trim()), this.numProductPrice.Value, (_productUnit == null ? "N/A" : _productUnit.ProductUnit));
                 this.dt.AcceptChanges();
                 this.gridControl.DataSource = dt;
 

@@ -259,13 +259,17 @@ namespace CS.BNP.App.SystemSetup.Job
 
             if (_ex == 0)
             {
-                this.dt.Rows.Add(this.gridView.RowCount + 1, 0, jobId,
+				var db = new Entity.CSBNPEntities();
+				int _proID = int.Parse(this.cbProduct.SelectedValue.ToString());
+				var _productUnit = db.mas_Product.Where(w => !w.IsService && w.ID == _proID).FirstOrDefault();
+
+				this.dt.Rows.Add(this.gridView.RowCount + 1, 0, jobId,
                     int.Parse(this.cbCreditor.SelectedValue.ToString()),
                      this.cbCreditor.Text.Trim(),
                                  int.Parse(this.cbProduct.SelectedValue.ToString()),
                                this.cbProduct.Text.ToString().Split(':')[1].Trim(),
                                this.cbProduct.Text.ToString().Split(':')[0].Trim(),
-                              this.numProductSell.Value, this.txtSourceFrom.Text.Trim());
+                              this.numProductSell.Value, this.txtSourceFrom.Text.Trim(), (_productUnit == null ? "N/A" : _productUnit.ProductUnit));
                 this.dt.AcceptChanges();
                 this.gridControl.DataSource = dt;
 
