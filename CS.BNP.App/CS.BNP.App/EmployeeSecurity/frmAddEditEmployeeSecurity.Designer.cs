@@ -50,7 +50,6 @@
 			this.chkIsApprove = new System.Windows.Forms.CheckBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.cbApp = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-			this.cbApprover = new System.Windows.Forms.ComboBox();
 			this.panel2.SuspendLayout();
 			this.panelWarning.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cbApp.Properties)).BeginInit();
@@ -292,16 +291,6 @@
 			this.cbApp.Size = new System.Drawing.Size(214, 24);
 			this.cbApp.TabIndex = 28;
 			// 
-			// cbApprover
-			// 
-			this.cbApprover.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-			this.cbApprover.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-			this.cbApprover.FormattingEnabled = true;
-			this.cbApprover.Location = new System.Drawing.Point(250, 258);
-			this.cbApprover.Name = "cbApprover";
-			this.cbApprover.Size = new System.Drawing.Size(215, 22);
-			this.cbApprover.TabIndex = 27;
-			// 
 			// frmAddEditEmployeeSecurity
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -310,7 +299,6 @@
 			this.ClientSize = new System.Drawing.Size(484, 361);
 			this.ControlBox = false;
 			this.Controls.Add(this.cbApp);
-			this.Controls.Add(this.cbApprover);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.chkIsApprove);
 			this.Controls.Add(this.panelWarning);
@@ -369,6 +357,5 @@
         private System.Windows.Forms.CheckBox chkIsApprove;
         private System.Windows.Forms.Label label2;
 		private DevExpress.XtraEditors.CheckedComboBoxEdit cbApp;
-		private System.Windows.Forms.ComboBox cbApprover;
 	}
 }

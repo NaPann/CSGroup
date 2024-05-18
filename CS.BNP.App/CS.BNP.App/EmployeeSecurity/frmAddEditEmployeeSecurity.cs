@@ -123,7 +123,7 @@ namespace CS.BNP.App.EmployeeSecurity
                         obj.UpdatedDate = DateTime.Now;
 
                         obj.NeedToApprove = this.chkIsApprove.Checked;
-                        obj.NeedToApproveBy = (this.cbApprover.SelectedIndex > 0 ? this.cbApprover.SelectedValue.ToString() : "");
+                        obj.NeedToApproveBy = this.cbApp.Properties.GetCheckedItems().ToString();
 
                         db.sec_EmployeeUser.Add(obj);
                         db.SaveChanges();
@@ -171,9 +171,9 @@ namespace CS.BNP.App.EmployeeSecurity
                         obj.UpdatedDate = DateTime.Now;
 
                         obj.NeedToApprove = this.chkIsApprove.Checked;
-                        obj.NeedToApproveBy = (this.cbApprover.SelectedIndex > 0 ? this.cbApprover.SelectedValue.ToString() : "");
+                        obj.NeedToApproveBy = this.cbApp.Properties.GetCheckedItems().ToString();
 
-                        db.SaveChanges();
+						db.SaveChanges();
                         //gloService.Announce("แก้ไขข้อมูลเรียบร้อย", AnnounceType.Infomation);
 
                         //Assign
@@ -226,7 +226,7 @@ namespace CS.BNP.App.EmployeeSecurity
                         this.chkListFunction.SetItemChecked(1, _data.IsSystemSetup); this.chkListFunction.SetItemChecked(2, _data.IsTransaction); this.chkListFunction.SetItemChecked(3, _data.IsReport);
                         this.chkListFunction.SetItemChecked(4, _data.IsAdmin);
 
-                        this.cbApprover.SelectedValue = _data.NeedToApproveBy; this.chkIsApprove.Checked = _data.NeedToApprove;
+                        this.cbApp.SetEditValue(_data.NeedToApproveBy); this.chkIsApprove.Checked = _data.NeedToApprove;
 
                         this.txtEmpCode.Enabled = false; this.txtEmpFirstName.Select(); this.txtEmpFirstName.SelectAll();
                     }
@@ -245,7 +245,7 @@ namespace CS.BNP.App.EmployeeSecurity
         private void ClearForm()
         {
             this.txtEmpCode.Text = string.Empty; this.txtEmpFirstName.Text = string.Empty; this.txtEmpLastName.Text = string.Empty;
-            this.txtUsername.Text = string.Empty; this.txtPassword.Text = string.Empty; this.chkListFunction.ClearSelected(); this.chkIsApprove.Checked = false; this.cbApprover.Enabled = false;
+            this.txtUsername.Text = string.Empty; this.txtPassword.Text = string.Empty; this.chkListFunction.ClearSelected(); this.chkIsApprove.Checked = false; this.cbApp.Enabled = false;
             for (int i = 0; i < this.chkListFunction.Items.Count; i++)
                 chkListFunction.SetItemCheckState(i, CheckState.Unchecked);
             this.txtEmpCode.Enabled = true; BindingControl();
@@ -289,7 +289,7 @@ namespace CS.BNP.App.EmployeeSecurity
 
         private void chkIsApprove_CheckedChanged(object sender, EventArgs e)
         {
-            this.cbApprover.Enabled = this.chkIsApprove.Checked;
+            this.cbApp.Enabled = this.chkIsApprove.Checked;
         }
     }
 }

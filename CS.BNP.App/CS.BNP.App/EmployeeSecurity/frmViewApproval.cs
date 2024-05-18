@@ -59,7 +59,7 @@ namespace CS.BNP.App.EmployeeSecurity
             {
                 //db.Configuration.LazyLoadingEnabled = false;
                 //find information for approve
-                string[] _find = db.sec_EmployeeUser.Where(w => w.NeedToApproveBy == Variable.CurrentProfile.username).Select(s => s.Username).ToArray();
+                string[] _find = db.sec_EmployeeUser.Where(w => w.NeedToApproveBy.Contains(Variable.CurrentProfile.username)).Select(s => s.Username).ToArray();
                 var data = db.mas_Job.Where(w => _find.Contains(w.UpdatedBy) && !w.IsApprove).ToList();
                 foreach (var item in data)
                 {
