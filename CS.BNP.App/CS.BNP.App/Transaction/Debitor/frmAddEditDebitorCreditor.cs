@@ -349,7 +349,7 @@ namespace CS.BNP.App.Transaction.Debitor
                                tran.mas_Product.ProductCode,
                                tran.mas_Product.ProductName,
                                decimal.Parse(this.txtJobQuantity.Text.Trim()), this.numSellPrice.Value, decimal.Parse(this.txtJobQuantity.Text.Trim()) * this.numSellPrice.Value,
-                               this.txtDocNo.Text.Trim());
+                               this.txtDocNo.Text.Trim(), tran.DocumentNo);
                 this.dt.AcceptChanges();
                 this.gridControlCreditor.DataSource = dt;
 
@@ -652,7 +652,7 @@ namespace CS.BNP.App.Transaction.Debitor
                                    tran.ProductID,
                                    tran.mas_Product.ProductCode,
                                    tran.mas_Product.ProductName,
-                                  tran.TranWeight, sellPrice, sellPrice * tran.TranWeight, "0000");
+                                  tran.TranWeight, sellPrice, sellPrice * tran.TranWeight, "0000", tran.DocumentNo);
                     this.dt.AcceptChanges();
                 }
 

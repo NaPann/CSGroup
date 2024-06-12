@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.BNP.App", "CS.BNP.App\CS.BNP.App.csproj", "{89D12415-C726-491E-A286-910D508C22A7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CSAppSetup", "CSAppSetup\CSAppSetup.vdproj", "{AF86E8D9-2305-4FAB-83CE-40582915E623}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{89D12415-C726-491E-A286-910D508C22A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89D12415-C726-491E-A286-910D508C22A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89D12415-C726-491E-A286-910D508C22A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF86E8D9-2305-4FAB-83CE-40582915E623}.Debug|Any CPU.ActiveCfg = Debug
+		{AF86E8D9-2305-4FAB-83CE-40582915E623}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

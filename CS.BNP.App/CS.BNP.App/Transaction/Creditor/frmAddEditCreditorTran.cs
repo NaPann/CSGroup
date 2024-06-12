@@ -38,7 +38,9 @@ namespace CS.BNP.App.Transaction.Creditor
                 this.txtTotalAmount.Text = "0.00"; this.lblPO.Text = "0.00"; this.txtAtVat.Text = "0.00";
 
                 //Sale Date
-                this.dtpTransactionDate.MinDate = StartDate; this.dtpTransactionDate.MaxDate = EndDate; this.dtpTransactionDate.Checked = false;
+                //this.dtpTransactionDate.MinDate = StartDate; this.dtpTransactionDate.MaxDate = EndDate; 
+                
+                this.dtpTransactionDate.Checked = false;
             }
             else
             {
@@ -604,12 +606,13 @@ namespace CS.BNP.App.Transaction.Creditor
         {
             if (this.chkOutsidePeriod.Checked)
             {
-                this.dtpTransactionDate.MinDate = DateTime.Now.AddYears(-999); this.dtpTransactionDate.MaxDate = DateTime.Now.AddYears(1);
+                this.dtpTransactionDate.MinDate = DateTime.MinValue; this.dtpTransactionDate.MaxDate = DateTime.Now.AddYears(5);
                 this.dtpTransactionDate.Checked = false;
             }
             else
             {
-                this.dtpTransactionDate.MinDate = StartDate; this.dtpTransactionDate.MaxDate = EndDate; this.dtpTransactionDate.Checked = true;
+                //this.dtpTransactionDate.MinDate = StartDate; this.dtpTransactionDate.MaxDate = EndDate; 
+                this.dtpTransactionDate.Checked = true;
             }
         }
         private void numVat_ValueChanged(object sender, EventArgs e)

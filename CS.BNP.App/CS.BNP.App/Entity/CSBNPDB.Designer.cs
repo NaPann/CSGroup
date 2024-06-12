@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\W@RK\Freelance\KIM\Last\CS.BNP.App\CS.BNP.App\CS.BNP.App\Entity\CSBNPDB.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\WRK\Freelance\KIM\Last\CS.BNP.App\CS.BNP.App\CS.BNP.App\Entity\CSBNPDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

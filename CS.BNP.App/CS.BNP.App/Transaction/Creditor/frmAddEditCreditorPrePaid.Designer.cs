@@ -63,7 +63,7 @@
             this.panelWarning.BackColor = System.Drawing.Color.LightCoral;
             this.panelWarning.Controls.Add(this.label1);
             this.panelWarning.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelWarning.Location = new System.Drawing.Point(0, 508);
+            this.panelWarning.Location = new System.Drawing.Point(0, 545);
             this.panelWarning.Name = "panelWarning";
             this.panelWarning.Size = new System.Drawing.Size(484, 35);
             this.panelWarning.TabIndex = 78;
@@ -117,7 +117,7 @@
             this.panel2.Controls.Add(this.btnSaveExit);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 543);
+            this.panel2.Location = new System.Drawing.Point(0, 580);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(484, 68);
             this.panel2.TabIndex = 73;
@@ -364,7 +364,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 611);
+            this.ClientSize = new System.Drawing.Size(484, 648);
             this.ControlBox = false;
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtJob);

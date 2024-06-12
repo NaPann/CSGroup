@@ -22,7 +22,7 @@ namespace CS.BNP.App.Transaction
         private void ClearForm()
         {
             this.txtBillngPeriodCode.Text = string.Empty;
-            this.dtpStartDate.Value = DateTime.Now; this.dtpEndDate.MinDate = DateTime.Now.AddYears(-10);
+            this.dtpStartDate.Value = DateTime.Now; this.dtpEndDate.MinDate = DateTime.MinValue;
             this.dtpEndDate.Value = DateTime.Now; 
         }
         private void goSave()

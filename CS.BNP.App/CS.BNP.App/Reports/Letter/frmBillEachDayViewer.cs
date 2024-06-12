@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,7 +68,8 @@ namespace CS.BNP.App.Reports.Letter
             Reports.Letter.rptBillEachDay rptLetter = new Letter.rptBillEachDay();
             rptLetter.DataSource = tmpdata;
             documentViewer1.DocumentSource = rptLetter;
-            rptLetter.CreateDocument();
+            documentViewer1.SetPageView(1, 1);
+			rptLetter.CreateDocument();
         }
 
         private void frmBillEachDayViewer_Load(object sender, EventArgs e)

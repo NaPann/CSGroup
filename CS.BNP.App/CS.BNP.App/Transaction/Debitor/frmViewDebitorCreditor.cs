@@ -64,7 +64,7 @@ namespace CS.BNP.App.Transaction.Debitor
 
                     Job = s.tran_DebitorRecDetail.FirstOrDefault().tran_Creditor.mas_Job.JobName,
 					Product = s.tran_DebitorRecDetail.FirstOrDefault().tran_Creditor.mas_Product.ProductName,
-					Qty = s.tran_DebitorRecDetail.Sum(sm=>sm.tran_Creditor.TranUnitQuantity),
+					Qty = s.tran_DebitorRecDetail.Sum(sm=>sm.tran_Creditor.TranWeight),
 					Price = s.tran_DebitorRecDetail.FirstOrDefault().TranSellPrice
 
 
