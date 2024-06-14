@@ -52,6 +52,7 @@ namespace CS.BNP.App.Entity
         public Nullable<int> TranUnitQuantity { get; set; }
         public string TranUnit { get; set; }
         public string REM { get; set; }
-        public decimal PrepaidTotalAmount { get; set; }
+        public Nullable<decimal> PrepaidTotalAmount { get; set; }
+        public string TranDetail { get; set; }
     }
 }

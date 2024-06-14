@@ -24,6 +24,7 @@ namespace CS.BNP.App.Entity
         public System.DateTime CreatedDate { get; set; }
         public string UpdatedBy { get; set; }
         public System.DateTime UpdatedDate { get; set; }
+        public string TranDetail { get; set; }
     
         public virtual mas_Creditor mas_Creditor { get; set; }
         public virtual mas_Job mas_Job { get; set; }

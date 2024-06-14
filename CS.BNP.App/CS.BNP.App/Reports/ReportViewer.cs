@@ -58,11 +58,16 @@ namespace CS.BNP.App.Reports
 
                     //data Remark
                     var tmpRem = db.vwsupport_CreditorRemSUMNEW.ToList();
+                   
                     if (keyId > 0)
                         tmpRem = tmpRem.Where(w => w.BillingPeriodID == keyId).ToList();
 
                     if (secondKeyId > 0)
                         tmpRem = tmpRem.Where(w => w.CreditorID == secondKeyId).ToList();
+
+                    //var tmp_R = tmpRem.Select(s => s.REM).Distinct().ToList();
+                    //var tmp_D = tmpRem.Select(s => s.TranDetail).Distinct().ToList();
+
                     foreach (var item in tmpRem)
                     {
                         item.REM = item.REM.Replace("&#x0D;", "");
@@ -71,7 +76,9 @@ namespace CS.BNP.App.Reports
                     }
                     if (tmpRem.Count() > 0)
                     {
-                        tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM);
+                        tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM.Split('\r').Distinct().FirstOrDefault());
+                        tmpData.ForEach(fr => fr.TranDetail = tmpRem.FirstOrDefault().TranDetail);
+
                         tmpData.ForEach(fr => fr.PrepaidTotalAmount = tmpRem.FirstOrDefault().TotalAmount.Value);
                     }
                     TransactionCreditor.rptReportingCreditior rptReportCr = new TransactionCreditor.rptReportingCreditior();

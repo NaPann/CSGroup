@@ -53,6 +53,8 @@
             this.txtAlready = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.txtDetail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelWarning.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPrePaid)).BeginInit();
@@ -84,7 +86,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblUsername.Location = new System.Drawing.Point(247, 157);
+            this.lblUsername.Location = new System.Drawing.Point(16, 301);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(87, 14);
             this.lblUsername.TabIndex = 76;
@@ -94,21 +96,21 @@
             // 
             this.lblEmpLastName.AutoSize = true;
             this.lblEmpLastName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblEmpLastName.Location = new System.Drawing.Point(13, 220);
+            this.lblEmpLastName.Location = new System.Drawing.Point(14, 155);
             this.lblEmpLastName.Name = "lblEmpLastName";
-            this.lblEmpLastName.Size = new System.Drawing.Size(54, 14);
+            this.lblEmpLastName.Size = new System.Drawing.Size(103, 14);
             this.lblEmpLastName.TabIndex = 75;
-            this.lblEmpLastName.Text = "หมายเหตุ";
+            this.lblEmpLastName.Text = "หมายเหตุ / รายการ";
             // 
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtRemark.Location = new System.Drawing.Point(16, 237);
+            this.txtRemark.Location = new System.Drawing.Point(17, 174);
             this.txtRemark.MaxLength = 500;
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(449, 250);
-            this.txtRemark.TabIndex = 4;
+            this.txtRemark.Size = new System.Drawing.Size(449, 45);
+            this.txtRemark.TabIndex = 2;
             // 
             // panel2
             // 
@@ -120,7 +122,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 580);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(484, 68);
-            this.panel2.TabIndex = 73;
+            this.panel2.TabIndex = 5;
             // 
             // btnExit
             // 
@@ -242,15 +244,15 @@
             this.numPrePaid.BackColor = System.Drawing.Color.Cornsilk;
             this.numPrePaid.DecimalPlaces = 2;
             this.numPrePaid.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.numPrePaid.Location = new System.Drawing.Point(250, 174);
+            this.numPrePaid.Location = new System.Drawing.Point(19, 318);
             this.numPrePaid.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.numPrePaid.Name = "numPrePaid";
-            this.numPrePaid.Size = new System.Drawing.Size(215, 40);
-            this.numPrePaid.TabIndex = 3;
+            this.numPrePaid.Size = new System.Drawing.Size(450, 40);
+            this.numPrePaid.TabIndex = 4;
             this.numPrePaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numPrePaid.ThousandsSeparator = true;
             this.numPrePaid.Enter += new System.EventHandler(this.numPrePaid_Enter);
@@ -260,7 +262,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(13, 157);
+            this.label2.Location = new System.Drawing.Point(16, 371);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 14);
             this.label2.TabIndex = 80;
@@ -271,12 +273,12 @@
             this.txtBillingAmount.BackColor = System.Drawing.Color.Cornsilk;
             this.txtBillingAmount.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtBillingAmount.ForeColor = System.Drawing.Color.DarkGreen;
-            this.txtBillingAmount.Location = new System.Drawing.Point(16, 174);
+            this.txtBillingAmount.Location = new System.Drawing.Point(19, 388);
             this.txtBillingAmount.MaxLength = 20;
             this.txtBillingAmount.Name = "txtBillingAmount";
             this.txtBillingAmount.ReadOnly = true;
-            this.txtBillingAmount.Size = new System.Drawing.Size(214, 40);
-            this.txtBillingAmount.TabIndex = 2;
+            this.txtBillingAmount.Size = new System.Drawing.Size(450, 40);
+            this.txtBillingAmount.TabIndex = 5;
             this.txtBillingAmount.Text = "0.00";
             this.txtBillingAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -300,7 +302,7 @@
             this.cbJob.Location = new System.Drawing.Point(16, 114);
             this.cbJob.Name = "cbJob";
             this.cbJob.Size = new System.Drawing.Size(215, 22);
-            this.cbJob.TabIndex = 81;
+            this.cbJob.TabIndex = 1;
             this.cbJob.SelectedIndexChanged += new System.EventHandler(this.cbJob_SelectedIndexChanged);
             // 
             // label3
@@ -328,7 +330,7 @@
             this.txtAlready.BackColor = System.Drawing.Color.Cornsilk;
             this.txtAlready.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.txtAlready.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtAlready.Location = new System.Drawing.Point(15, 262);
+            this.txtAlready.Location = new System.Drawing.Point(193, 174);
             this.txtAlready.MaxLength = 20;
             this.txtAlready.Name = "txtAlready";
             this.txtAlready.ReadOnly = true;
@@ -342,7 +344,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(12, 245);
+            this.label5.Location = new System.Drawing.Point(13, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 14);
             this.label5.TabIndex = 86;
@@ -359,6 +361,25 @@
             this.lblID.TabIndex = 87;
             this.lblID.Visible = false;
             // 
+            // txtDetail
+            // 
+            this.txtDetail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtDetail.Location = new System.Drawing.Point(19, 262);
+            this.txtDetail.MaxLength = 500;
+            this.txtDetail.Name = "txtDetail";
+            this.txtDetail.Size = new System.Drawing.Size(449, 27);
+            this.txtDetail.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.Location = new System.Drawing.Point(16, 243);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 14);
+            this.label6.TabIndex = 89;
+            this.label6.Text = "ช่วงวันที่ทำรายการ";
+            // 
             // frmAddEditCreditorPrePaid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -366,6 +387,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 648);
             this.ControlBox = false;
+            this.Controls.Add(this.txtDetail);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.txtJob);
             this.Controls.Add(this.txtAlready);
@@ -381,7 +405,6 @@
             this.Controls.Add(this.panelWarning);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblEmpLastName);
-            this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblEmpCode);
@@ -429,5 +452,7 @@
         private System.Windows.Forms.TextBox txtAlready;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtDetail;
+        private System.Windows.Forms.Label label6;
     }
 }

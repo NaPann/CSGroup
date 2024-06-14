@@ -71,5 +71,6 @@ namespace CS.BNP.App.Entity
         public decimal PrepaidTotalAmount { get; set; }
         public string REM { get; set; }
         public string TranUnit { get; set; }
+        public string TranDetail { get; set; }
     }
 }

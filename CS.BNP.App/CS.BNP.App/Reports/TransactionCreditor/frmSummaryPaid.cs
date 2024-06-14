@@ -65,7 +65,7 @@ namespace CS.BNP.App.Reports.TransactionCreditor
 
             if (_CR > 0)
                 tmpData = tmpData.Where(w => w.CreditorID == _CR).ToList();
-
+          
             var data = tmpData.AsEnumerable().Select((s, inx) => new
             {
                 iNo = inx + 1,
@@ -88,6 +88,7 @@ namespace CS.BNP.App.Reports.TransactionCreditor
             }).ToList();
             this.gridControl.DataSource = data;
             this.gridControl.ForceInitialize();
+       
             this.btnExport.Visible = this.gridView.RowCount > 0;
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -104,10 +105,12 @@ namespace CS.BNP.App.Reports.TransactionCreditor
             }
             else
             {
+                splashScreenManager1.ShowWaitForm();
                 ReportViewer rptViewer = new ReportViewer();
                 rptViewer.keyId = int.Parse(this.cbBillingPeriod.SelectedValue.ToString()); //int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns["BillingPeriodID"]).ToString());
                 rptViewer.secondKeyId = int.Parse(this.cbCreditor.SelectedValue.ToString()); //int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns["CreditorID"]).ToString());
                 rptViewer.PrintReport(ReportType.ReportCreditor);
+                this.splashScreenManager1.CloseWaitForm();
                 rptViewer.ShowDialog();
             }
         }
@@ -125,7 +128,9 @@ namespace CS.BNP.App.Reports.TransactionCreditor
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
             DGV();
+            this.splashScreenManager1.CloseWaitForm();
         }
 
         private void btnExport_Click(object sender, EventArgs e)

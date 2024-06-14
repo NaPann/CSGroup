@@ -226,7 +226,8 @@
           <Property Name="CreditorID" Type="int" Nullable="false" />
           <Property Name="JobID" Type="int" Nullable="false" />
           <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="TranDetail" Type="nvarchar" MaxLength="500" />
+          <Property Name="Remark" Type="nvarchar(max)" />
           <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -294,9 +295,37 @@
           <Property Name="DocNo" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_SumTransactionCreditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_SumTransactionCreditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_SumTransactionCreditor">
           <Key>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <PropertyRef Name="Inx" />
           </Key>
           <Property Name="Inx" Type="bigint" Nullable="false" />
@@ -335,12 +364,13 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_SumTransactionCreditor' does n
           <Property Name="TotalBeforeVat" Type="numeric" Precision="38" Scale="2" />
           <Property Name="TotalAmount" Type="numeric" Precision="38" Scale="2" />
           <Property Name="TranUnitQuantity" Type="int" />
+          <Property Name="PrepaidTotalAmount" Type="numeric" Precision="38" Scale="6" />
+          <Property Name="REM" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TranUnit" Type="nvarchar" MaxLength="50" />
-          <Property Name="REM" Type="varchar" MaxLength="1" Nullable="false" />
-          <Property Name="PrepaidTotalAmount" Type="numeric" Precision="1" Scale="1" Nullable="false" />
+          <Property Name="TranDetail" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TranCreditorMill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TranCreditorMill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_TranCreditorMill">
           <Key>
             <PropertyRef Name="ID" />
@@ -472,7 +502,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TranCreditorMill' does not hav
           <Property Name="ServiceRemark" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TransactionCreditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TransactionCreditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_TransactionCreditor">
           <Key>
             <PropertyRef Name="ID" />
@@ -582,9 +612,10 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TransactionCreditor' does not 
           <Property Name="PrepaidTotalAmount" Type="numeric" Precision="38" Scale="2" Nullable="false" />
           <Property Name="REM" Type="nvarchar(max)" />
           <Property Name="TranUnit" Type="nvarchar" MaxLength="50" />
+          <Property Name="TranDetail" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TransactionDebitor_new' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TransactionDebitor_new' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_TransactionDebitor_new">
           <Key>
             
@@ -749,7 +780,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TransactionDebitor_new' does n
           <Property Name="TranCRID" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TransactionMill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TransactionMill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_TransactionMill">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -843,7 +874,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_TransactionMill' does not have
           <Property Name="JobDateStart" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_VersusBuySell' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_VersusBuySell' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_VersusBuySell">
           <Key>
             <PropertyRef Name="ID" />
@@ -885,7 +916,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_VersusBuySell' does not have a
           <Property Name="CreditorName" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_VersusBuySellFromJob' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_VersusBuySellFromJob' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_VersusBuySellFromJob">
           <Key>
             
@@ -950,7 +981,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwrpt_VersusBuySellFromJob' does not
           <Property Name="ProductUnit" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwsupport_CreditorRemSUMNEW">
           <Key>
             <PropertyRef Name="BillingPeriodID" />
@@ -960,6 +991,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="CreditorID" Type="int" Nullable="false" />
           <Property Name="TotalAmount" Type="numeric" Precision="38" Scale="2" />
           <Property Name="REM" Type="nvarchar(max)" />
+          <Property Name="TranDetail" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_key_DebitorBilling_mas_DebitorBillingPeriod">
           <End Role="mas_DebitorBillingPeriod" Type="Self.mas_DebitorBillingPeriod" Multiplicity="1" />
@@ -1293,9 +1325,10 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
     [vwrpt_SumTransactionCreditor].[TotalBeforeVat] AS [TotalBeforeVat], 
     [vwrpt_SumTransactionCreditor].[TotalAmount] AS [TotalAmount], 
     [vwrpt_SumTransactionCreditor].[TranUnitQuantity] AS [TranUnitQuantity], 
-    [vwrpt_SumTransactionCreditor].[TranUnit] AS [TranUnit], 
+    [vwrpt_SumTransactionCreditor].[PrepaidTotalAmount] AS [PrepaidTotalAmount], 
     [vwrpt_SumTransactionCreditor].[REM] AS [REM], 
-    [vwrpt_SumTransactionCreditor].[PrepaidTotalAmount] AS [PrepaidTotalAmount]
+    [vwrpt_SumTransactionCreditor].[TranUnit] AS [TranUnit], 
+    [vwrpt_SumTransactionCreditor].[TranDetail] AS [TranDetail]
     FROM [dbo].[vwrpt_SumTransactionCreditor] AS [vwrpt_SumTransactionCreditor]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwrpt_TranCreditorMill" EntityType="Self.vwrpt_TranCreditorMill" store:Type="Views" store:Schema="dbo">
@@ -1437,7 +1470,8 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
     [vwrpt_TransactionCreditor].[TranUnitQuantity] AS [TranUnitQuantity], 
     [vwrpt_TransactionCreditor].[PrepaidTotalAmount] AS [PrepaidTotalAmount], 
     [vwrpt_TransactionCreditor].[REM] AS [REM], 
-    [vwrpt_TransactionCreditor].[TranUnit] AS [TranUnit]
+    [vwrpt_TransactionCreditor].[TranUnit] AS [TranUnit], 
+    [vwrpt_TransactionCreditor].[TranDetail] AS [TranDetail]
     FROM [dbo].[vwrpt_TransactionCreditor] AS [vwrpt_TransactionCreditor]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwrpt_TransactionDebitor_new" EntityType="Self.vwrpt_TransactionDebitor_new" store:Type="Views" store:Schema="dbo">
@@ -1651,7 +1685,8 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
     [vwsupport_CreditorRemSUMNEW].[BillingPeriodID] AS [BillingPeriodID], 
     [vwsupport_CreditorRemSUMNEW].[CreditorID] AS [CreditorID], 
     [vwsupport_CreditorRemSUMNEW].[TotalAmount] AS [TotalAmount], 
-    [vwsupport_CreditorRemSUMNEW].[REM] AS [REM]
+    [vwsupport_CreditorRemSUMNEW].[REM] AS [REM], 
+    [vwsupport_CreditorRemSUMNEW].[TranDetail] AS [TranDetail]
     FROM [dbo].[vwsupport_CreditorRemSUMNEW] AS [vwsupport_CreditorRemSUMNEW]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_key_DebitorBilling_mas_DebitorBillingPeriod" Association="Self.FK_key_DebitorBilling_mas_DebitorBillingPeriod">
@@ -2060,6 +2095,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="PrepaidTotalAmount" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
           <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TranDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vwrpt_TransactionDebitor_new">
           <Key>
@@ -2561,7 +2597,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="CreditorID" Type="Int32" Nullable="false" />
           <Property Name="JobID" Type="Int32" Nullable="false" />
           <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -2569,6 +2605,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <NavigationProperty Name="mas_Creditor" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Creditor" FromRole="tran_CreditorPrePaid" ToRole="mas_Creditor" />
           <NavigationProperty Name="mas_Job" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_mas_Job" FromRole="tran_CreditorPrePaid" ToRole="mas_Job" />
           <NavigationProperty Name="tran_BillingPeriod" Relationship="CS.BNP.DBModel.FK_tran_CreditorPrePaid_tran_BillingPeriod" FromRole="tran_CreditorPrePaid" ToRole="tran_BillingPeriod" />
+          <Property Name="TranDetail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_tran_CreditorPrePaid_mas_Creditor">
           <End Type="CS.BNP.DBModel.mas_Creditor" Role="mas_Creditor" Multiplicity="1" />
@@ -2925,6 +2962,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="CreditorID" Type="Int32" Nullable="false" />
           <Property Name="TotalAmount" Type="Decimal" Precision="38" Scale="2" />
           <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TranDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vwrpt_SumTransactionCreditor">
           <Key>
@@ -2967,8 +3005,9 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="TotalAmount" Type="Decimal" Precision="38" Scale="2" />
           <Property Name="TranUnitQuantity" Type="Int32" />
           <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="REM" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="PrepaidTotalAmount" Type="Decimal" Nullable="false" Precision="1" Scale="1" />
+          <Property Name="REM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrepaidTotalAmount" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="TranDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -3100,6 +3139,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="vwrpt_TransactionCreditor">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.vwrpt_TransactionCreditor">
               <MappingFragment StoreEntitySet="vwrpt_TransactionCreditor">
+                <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
                 <ScalarProperty Name="TranUnit" ColumnName="TranUnit" />
                 <ScalarProperty Name="REM" ColumnName="REM" />
                 <ScalarProperty Name="PrepaidTotalAmount" ColumnName="PrepaidTotalAmount" />
@@ -3447,6 +3487,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="tran_CreditorPrePaid">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.tran_CreditorPrePaid">
               <MappingFragment StoreEntitySet="tran_CreditorPrePaid">
+                <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
@@ -3644,6 +3685,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="vwsupport_CreditorRemSUMNEW">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.vwsupport_CreditorRemSUMNEW">
               <MappingFragment StoreEntitySet="vwsupport_CreditorRemSUMNEW">
+                <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
                 <ScalarProperty Name="REM" ColumnName="REM" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="CreditorID" ColumnName="CreditorID" />
@@ -3654,6 +3696,7 @@ warning 6002: The table/view 'CSGDB_PH2.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="vwrpt_SumTransactionCreditor">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.vwrpt_SumTransactionCreditor">
               <MappingFragment StoreEntitySet="vwrpt_SumTransactionCreditor">
+                <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
                 <ScalarProperty Name="PrepaidTotalAmount" ColumnName="PrepaidTotalAmount" />
                 <ScalarProperty Name="REM" ColumnName="REM" />
                 <ScalarProperty Name="TranUnit" ColumnName="TranUnit" />

@@ -44,13 +44,20 @@ namespace CS.BNP.App.Transaction.Creditor
         }
         private void ClearForm()
         {
-            BindingControl(); this.cbJob.SelectedIndex = 0;
-            this.cbCreditor.SelectedIndex = 0; this.txtCreditorName.Text = string.Empty;
+            //if (iType == 1)
+            //{
+            //    BindingControl();
+            //    this.cbJob.SelectedIndex = 0;
+            //    this.cbCreditor.SelectedIndex = 0; this.txtCreditorName.Text = string.Empty;
+            //}
             this.txtBillingAmount.Text = "0.00"; this.numPrePaid.Value = 0; this.lblID.Text = string.Empty;
-            this.txtRemark.Text = string.Empty; 
+            this.txtRemark.Text = string.Empty; this.txtDetail.Text = string.Empty;
         }
         private void frmAddEditCreditorPrePaid_Load(object sender, EventArgs e)
         {
+            BindingControl();
+            this.cbJob.SelectedIndex = 0;
+            this.cbCreditor.SelectedIndex = 0; this.txtCreditorName.Text = string.Empty;
             ClearForm();
             if (iType > 0)
             {
@@ -141,6 +148,7 @@ namespace CS.BNP.App.Transaction.Creditor
                             obj.UpdatedBy = Variable.CurrentProfile.username;
                             obj.UpdatedDate = DateTime.Now;
                             obj.Remark = this.txtRemark.Text.Trim();
+                            obj.TranDetail = this.txtDetail.Text.Trim();
                             db.tran_CreditorPrePaid.Add(obj);
                             db.SaveChanges();
 
@@ -159,6 +167,7 @@ namespace CS.BNP.App.Transaction.Creditor
                             obj.UpdatedBy = Variable.CurrentProfile.username;
                             obj.UpdatedDate = DateTime.Now;
                             obj.Remark = this.txtRemark.Text.Trim();
+                            obj.TranDetail = this.txtDetail.Text.Trim();
                             db.SaveChanges();
                             //gloService.Announce("แก้ไขข้อมูลเรียบร้อย", AnnounceType.Infomation);
                             this.Close();
@@ -166,7 +175,7 @@ namespace CS.BNP.App.Transaction.Creditor
                     }
                 }
                 ClearForm();
-                this.cbCreditor.Select();
+                this.txtRemark.Select();
             }
             else
             {

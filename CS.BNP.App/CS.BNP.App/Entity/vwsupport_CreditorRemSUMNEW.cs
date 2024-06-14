@@ -18,5 +18,6 @@ namespace CS.BNP.App.Entity
         public int CreditorID { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
         public string REM { get; set; }
+        public string TranDetail { get; set; }
     }
 }
