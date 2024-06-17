@@ -52,7 +52,7 @@
         <EntityTypeShape EntityType="CS.BNP.DBModel.vwrpt_TranCreditorMill" Width="3.25" PointX="19.375" PointY="17.75" />
         <EntityTypeShape EntityType="CS.BNP.DBModel.vwrpt_TransactionMill" Width="1.5" PointX="21.375" PointY="0.75" />
         <EntityTypeShape EntityType="CS.BNP.DBModel.vwsupport_CreditorRemSUMNEW" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CS.BNP.DBModel.vwrpt_SumTransactionCreditor" Width="4.375" PointX="7.375" PointY="21.75" />
+        <EntityTypeShape EntityType="CS.BNP.DBModel.vwrpt_SumTransactionCreditor" Width="1.5" PointX="7.375" PointY="21.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

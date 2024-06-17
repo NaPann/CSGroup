@@ -50,9 +50,10 @@ namespace CS.BNP.App.Entity
         public Nullable<decimal> TotalBeforeVat { get; set; }
         public Nullable<decimal> TotalAmount { get; set; }
         public Nullable<int> TranUnitQuantity { get; set; }
-        public string TranUnit { get; set; }
-        public string REM { get; set; }
         public Nullable<decimal> PrepaidTotalAmount { get; set; }
+        public string REM { get; set; }
+        public string TranUnit { get; set; }
         public string TranDetail { get; set; }
+        public string TranDetailAmt { get; set; }
     }
 }

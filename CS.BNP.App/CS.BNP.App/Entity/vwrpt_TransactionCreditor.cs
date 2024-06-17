@@ -72,5 +72,6 @@ namespace CS.BNP.App.Entity
         public string REM { get; set; }
         public string TranUnit { get; set; }
         public string TranDetail { get; set; }
+        public string TranDetailAmt { get; set; }
     }
 }

@@ -298,34 +298,6 @@
 warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_SumTransactionCreditor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwrpt_SumTransactionCreditor">
           <Key>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             <PropertyRef Name="Inx" />
           </Key>
           <Property Name="Inx" Type="bigint" Nullable="false" />
@@ -368,6 +340,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_SumTransactionCreditor' does n
           <Property Name="REM" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TranUnit" Type="nvarchar" MaxLength="50" />
           <Property Name="TranDetail" Type="nvarchar(max)" />
+          <Property Name="TranDetailAmt" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TranCreditorMill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -613,6 +586,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TransactionCreditor' does not 
           <Property Name="REM" Type="nvarchar(max)" />
           <Property Name="TranUnit" Type="nvarchar" MaxLength="50" />
           <Property Name="TranDetail" Type="nvarchar(max)" />
+          <Property Name="TranDetailAmt" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CSBNPDB_C.dbo.vwrpt_TransactionDebitor_new' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -992,6 +966,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="TotalAmount" Type="numeric" Precision="38" Scale="2" />
           <Property Name="REM" Type="nvarchar(max)" />
           <Property Name="TranDetail" Type="nvarchar(max)" />
+          <Property Name="TranDetailAmt" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_key_DebitorBilling_mas_DebitorBillingPeriod">
           <End Role="mas_DebitorBillingPeriod" Type="Self.mas_DebitorBillingPeriod" Multiplicity="1" />
@@ -1328,7 +1303,8 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
     [vwrpt_SumTransactionCreditor].[PrepaidTotalAmount] AS [PrepaidTotalAmount], 
     [vwrpt_SumTransactionCreditor].[REM] AS [REM], 
     [vwrpt_SumTransactionCreditor].[TranUnit] AS [TranUnit], 
-    [vwrpt_SumTransactionCreditor].[TranDetail] AS [TranDetail]
+    [vwrpt_SumTransactionCreditor].[TranDetail] AS [TranDetail], 
+    [vwrpt_SumTransactionCreditor].[TranDetailAmt] AS [TranDetailAmt]
     FROM [dbo].[vwrpt_SumTransactionCreditor] AS [vwrpt_SumTransactionCreditor]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwrpt_TranCreditorMill" EntityType="Self.vwrpt_TranCreditorMill" store:Type="Views" store:Schema="dbo">
@@ -1471,7 +1447,8 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
     [vwrpt_TransactionCreditor].[PrepaidTotalAmount] AS [PrepaidTotalAmount], 
     [vwrpt_TransactionCreditor].[REM] AS [REM], 
     [vwrpt_TransactionCreditor].[TranUnit] AS [TranUnit], 
-    [vwrpt_TransactionCreditor].[TranDetail] AS [TranDetail]
+    [vwrpt_TransactionCreditor].[TranDetail] AS [TranDetail], 
+    [vwrpt_TransactionCreditor].[TranDetailAmt] AS [TranDetailAmt]
     FROM [dbo].[vwrpt_TransactionCreditor] AS [vwrpt_TransactionCreditor]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vwrpt_TransactionDebitor_new" EntityType="Self.vwrpt_TransactionDebitor_new" store:Type="Views" store:Schema="dbo">
@@ -1686,7 +1663,8 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
     [vwsupport_CreditorRemSUMNEW].[CreditorID] AS [CreditorID], 
     [vwsupport_CreditorRemSUMNEW].[TotalAmount] AS [TotalAmount], 
     [vwsupport_CreditorRemSUMNEW].[REM] AS [REM], 
-    [vwsupport_CreditorRemSUMNEW].[TranDetail] AS [TranDetail]
+    [vwsupport_CreditorRemSUMNEW].[TranDetail] AS [TranDetail], 
+    [vwsupport_CreditorRemSUMNEW].[TranDetailAmt] AS [TranDetailAmt]
     FROM [dbo].[vwsupport_CreditorRemSUMNEW] AS [vwsupport_CreditorRemSUMNEW]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_key_DebitorBilling_mas_DebitorBillingPeriod" Association="Self.FK_key_DebitorBilling_mas_DebitorBillingPeriod">
@@ -2096,6 +2074,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TranDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TranDetailAmt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vwrpt_TransactionDebitor_new">
           <Key>
@@ -2963,6 +2942,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="TotalAmount" Type="Decimal" Precision="38" Scale="2" />
           <Property Name="REM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TranDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TranDetailAmt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vwrpt_SumTransactionCreditor">
           <Key>
@@ -3004,10 +2984,11 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <Property Name="TotalBeforeVat" Type="Decimal" Precision="38" Scale="2" />
           <Property Name="TotalAmount" Type="Decimal" Precision="38" Scale="2" />
           <Property Name="TranUnitQuantity" Type="Int32" />
-          <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="REM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PrepaidTotalAmount" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="REM" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TranUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TranDetail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TranDetailAmt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -3139,6 +3120,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="vwrpt_TransactionCreditor">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.vwrpt_TransactionCreditor">
               <MappingFragment StoreEntitySet="vwrpt_TransactionCreditor">
+                <ScalarProperty Name="TranDetailAmt" ColumnName="TranDetailAmt" />
                 <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
                 <ScalarProperty Name="TranUnit" ColumnName="TranUnit" />
                 <ScalarProperty Name="REM" ColumnName="REM" />
@@ -3685,6 +3667,7 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="vwsupport_CreditorRemSUMNEW">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.vwsupport_CreditorRemSUMNEW">
               <MappingFragment StoreEntitySet="vwsupport_CreditorRemSUMNEW">
+                <ScalarProperty Name="TranDetailAmt" ColumnName="TranDetailAmt" />
                 <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
                 <ScalarProperty Name="REM" ColumnName="REM" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
@@ -3696,10 +3679,11 @@ warning 6002: The table/view 'CSBNPDB_C.dbo.vwsupport_CreditorRemSUMNEW' does no
           <EntitySetMapping Name="vwrpt_SumTransactionCreditor">
             <EntityTypeMapping TypeName="CS.BNP.DBModel.vwrpt_SumTransactionCreditor">
               <MappingFragment StoreEntitySet="vwrpt_SumTransactionCreditor">
+                <ScalarProperty Name="TranDetailAmt" ColumnName="TranDetailAmt" />
                 <ScalarProperty Name="TranDetail" ColumnName="TranDetail" />
-                <ScalarProperty Name="PrepaidTotalAmount" ColumnName="PrepaidTotalAmount" />
-                <ScalarProperty Name="REM" ColumnName="REM" />
                 <ScalarProperty Name="TranUnit" ColumnName="TranUnit" />
+                <ScalarProperty Name="REM" ColumnName="REM" />
+                <ScalarProperty Name="PrepaidTotalAmount" ColumnName="PrepaidTotalAmount" />
                 <ScalarProperty Name="TranUnitQuantity" ColumnName="TranUnitQuantity" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="TotalBeforeVat" ColumnName="TotalBeforeVat" />

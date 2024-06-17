@@ -76,8 +76,10 @@ namespace CS.BNP.App.Reports
                     }
                     if (tmpRem.Count() > 0)
                     {
-                        tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM.Split('\r').Distinct().FirstOrDefault());
+                        tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM.Split('\r').Distinct().FirstOrDefault().Replace("|", "\r"));
+                        //tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM);
                         tmpData.ForEach(fr => fr.TranDetail = tmpRem.FirstOrDefault().TranDetail);
+                        tmpData.ForEach(fr => fr.TranDetailAmt = tmpRem.FirstOrDefault().TranDetailAmt);
 
                         tmpData.ForEach(fr => fr.PrepaidTotalAmount = tmpRem.FirstOrDefault().TotalAmount.Value);
                     }
