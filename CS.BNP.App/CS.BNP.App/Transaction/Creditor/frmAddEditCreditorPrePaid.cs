@@ -1,4 +1,5 @@
 ﻿using CS.BNP.App.Services;
+using DevExpress.XtraBars.Docking.Paint;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace CS.BNP.App.Transaction.Creditor
                     this.cbJob.SelectedValue = data.JobID;
                     this.numPrePaid.Value = data.TotalAmount;
                     this.txtRemark.Text = data.Remark;
-
+                    this.txtDetail.Text = data.TranDetail;
                     this.cbCreditor.Enabled = false; this.cbJob.Enabled = false;
                 }
                 else

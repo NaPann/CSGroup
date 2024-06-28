@@ -48,7 +48,7 @@ namespace CS.BNP.App.Entity
         public virtual DbSet<tran_CreditorService> tran_CreditorService { get; set; }
         public virtual DbSet<vwrpt_TranCreditorMill> vwrpt_TranCreditorMill { get; set; }
         public virtual DbSet<vwrpt_TransactionMill> vwrpt_TransactionMill { get; set; }
-        public virtual DbSet<vwsupport_CreditorRemSUMNEW> vwsupport_CreditorRemSUMNEW { get; set; }
         public virtual DbSet<vwrpt_SumTransactionCreditor> vwrpt_SumTransactionCreditor { get; set; }
+        public virtual DbSet<vwsupport_CreditorRemSUMNEW> vwsupport_CreditorRemSUMNEW { get; set; }
     }
 }

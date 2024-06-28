@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CS.BNP.App.Services;
+using CS.BNP.App.Entity;
 
 namespace CS.BNP.App.Reports
 {
@@ -58,29 +59,36 @@ namespace CS.BNP.App.Reports
 
                     //data Remark
                     var tmpRem = db.vwsupport_CreditorRemSUMNEW.ToList();
-                   
+                    string q = @"SELECT BillingPeriodID, CreditorID, TotalAmount, REM, TranDetail, TranDetailAmt 
+  FROM [dbo].[vwsupport_CreditorRemSUMNEW]
+  where (1=1)";
                     if (keyId > 0)
+                    {
                         tmpRem = tmpRem.Where(w => w.BillingPeriodID == keyId).ToList();
-
+                        q += @" AND  BillingPeriodID = '" + keyId + "'";
+                    }
                     if (secondKeyId > 0)
+                    {
                         tmpRem = tmpRem.Where(w => w.CreditorID == secondKeyId).ToList();
-
-                    //var tmp_R = tmpRem.Select(s => s.REM).Distinct().ToList();
-                    //var tmp_D = tmpRem.Select(s => s.TranDetail).Distinct().ToList();
-
+                        q += @" AND  CreditorID = '" + secondKeyId + "'";
+                    }
+                 
                     foreach (var item in tmpRem)
                     {
                         item.REM = item.REM.Replace("&#x0D;", "");
-                        if (item.REM.Length > 2)
-                            item.REM = item.REM.Substring(1);
+                        //if (item.REM.Length > 2)
+                        //    item.REM = item.REM.Substring(1);
                     }
                     if (tmpRem.Count() > 0)
                     {
                         tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM.Split('\r').Distinct().FirstOrDefault().Replace("|", "\r"));
                         //tmpData.ForEach(fr => fr.REM = tmpRem.FirstOrDefault().REM);
-                        tmpData.ForEach(fr => fr.TranDetail = tmpRem.FirstOrDefault().TranDetail);
-                        tmpData.ForEach(fr => fr.TranDetailAmt = tmpRem.FirstOrDefault().TranDetailAmt);
-
+                        var _tde = db.Database.SqlQuery<vwsupport_CreditorRemSUMNEW>(q).FirstOrDefault();
+                        if (_tde != null)
+                        {
+                            tmpData.ForEach(fr => fr.TranDetail = _tde.TranDetail);
+                            tmpData.ForEach(fr => fr.TranDetailAmt = _tde.TranDetailAmt);
+                        }
                         tmpData.ForEach(fr => fr.PrepaidTotalAmount = tmpRem.FirstOrDefault().TotalAmount.Value);
                     }
                     TransactionCreditor.rptReportingCreditior rptReportCr = new TransactionCreditor.rptReportingCreditior();

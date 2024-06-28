@@ -58,7 +58,7 @@ namespace CS.BNP.App.Transaction.Creditor
                     BillingPeriodCode = s.tran_BillingPeriod.BillingPeriodCode,
                     BillingDate = s.BillingDate,
                     TranUnitQuantity = s.TranUnitQuantity,
-                    TransactionCreditorCode = s.TransactionCreditorCode,
+                    TransactionCreditorCode = s.TransactionCreditorCode, 
                     TransactionDate = s.TransactionDate,
                     TransactionSeq = s.TransactionSeq,
                     DocumentNo = s.DocumentNo,
@@ -81,10 +81,10 @@ namespace CS.BNP.App.Transaction.Creditor
                     IsPaid = s.IsPaid,
                     TranUnit = s.TranUnit 
                 }).ToList();
-                this.gridControl.DataSource = data;
+                this.gridControl.DataSource = data.OrderBy(o=>o.ID).ToList();
                 this.gridControl.ForceInitialize();
 
-                this.btnConfirmPaid.Visible = this.gridView.RowCount > 0;
+                    this.btnConfirmPaid.Visible = this.gridView.RowCount > 0;
             }
             else
             {
