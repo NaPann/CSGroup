@@ -8,7 +8,7 @@ namespace CS.BNP.App.Services
 {
     public static class Variable
     {
-        public static string AppVersion = "V.240607";
+        public static string AppVersion = "V.250301";
         public static Models.UserProfile CurrentProfile { get; set; }
         public static byte chPass { get; set; }
         public static System.Globalization.CultureInfo cul = new System.Globalization.CultureInfo("en-us");

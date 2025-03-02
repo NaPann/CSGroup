@@ -799,7 +799,6 @@
             this.xrTableCell29.Multiline = true;
             this.xrTableCell29.Name = "xrTableCell29";
             this.xrTableCell29.StylePriority.UseBackColor = false;
-            this.xrTableCell29.Text = "รวม";
             this.xrTableCell29.Weight = 2.8011615640125123D;
             // 
             // xrTableCell8

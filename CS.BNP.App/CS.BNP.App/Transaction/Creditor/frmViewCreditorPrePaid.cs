@@ -77,13 +77,15 @@ namespace CS.BNP.App.Transaction.Creditor
         private void btnAddData_Click(object sender, EventArgs e)
         {
             frmAddEditCreditorPrePaid frm = new frmAddEditCreditorPrePaid();
-            int _bpId = int.Parse(this.cbBillingPeriod.SelectedValue.ToString());
+			int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+			int _bpId = int.Parse(this.cbBillingPeriod.SelectedValue.ToString());
             var _bp = db.tran_BillingPeriod.Where(w => w.ID == _bpId).FirstOrDefault();
             frm._bpId = _bpId;
             frm.BringToFront();
             frm.StartPosition = FormStartPosition.CenterParent;
             frm.ShowDialog();
-        }
+			gridView.FocusedRowHandle = _bfInx;
+		}
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -100,13 +102,15 @@ namespace CS.BNP.App.Transaction.Creditor
         {
             frmAddEditCreditorPrePaid frmEdit = new frmAddEditCreditorPrePaid();
             frmEdit.iType = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns[0]).ToString());
-            int _bpId = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns["BillingPeriodID"]).ToString());
+			int _bfInx = gridView.GetSelectedRows().FirstOrDefault();
+			int _bpId = int.Parse(this.gridView.GetRowCellValue(this.gridView.FocusedRowHandle, gridView.Columns["BillingPeriodID"]).ToString());
             frmEdit._bpId = _bpId;
             frmEdit.BringToFront();
             frmEdit.StartPosition = FormStartPosition.CenterParent;
             frmEdit.ShowDialog();
             DGV();
-        }
+			gridView.FocusedRowHandle = _bfInx;
+		}
 
         private void btnDelete_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
